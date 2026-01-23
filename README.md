@@ -1,85 +1,97 @@
-# Sistema de Gerenciamento para Assistência Técnica
+Sistema de Gerenciamento para Assistência Técnica
+📌 Visão Geral
 
-## 📌 Sobre o projeto
+O Sistema de Gerenciamento para Assistência Técnica é um projeto em desenvolvimento que tem como objetivo criar uma aplicação web voltada para o controle completo de processos em uma loja de conserto de celulares.
 
-Este projeto está em desenvolvimento e tem como objetivo a criação de um **sistema de gerenciamento de serviços para uma loja de conserto de celulares**.
+O sistema busca otimizar o gerenciamento de clientes, serviços, produtos, estoque e fluxo financeiro, oferecendo uma solução prática e organizada para o dia a dia da assistência técnica. Além disso, o projeto serve como base de estudo e aprimoramento técnico em desenvolvimento full-stack, com foco em Python e front-end web.
 
-A aplicação será voltada para o controle e organização de processos essenciais do dia a dia de uma assistência técnica, como cadastro de clientes, gerenciamento de serviços, controle financeiro e outras funcionalidades que serão implementadas gradualmente.
+🎯 Objetivos do Projeto
 
-O desenvolvimento do front-end foi iniciado em **18/01/2026**, sem previsão de término, pois o projeto está sendo construído aos poucos, com foco em aprendizado e evolução técnica.
+Desenvolver uma aplicação web funcional que simule um sistema real de assistência técnica.
 
----
+Servir como projeto de estudo e portfólio profissional.
 
-## 🎯 Objetivo
+Aplicar conceitos de front-end, back-end e persistência de dados.
 
-Criar uma aplicação web funcional que simule um sistema real utilizado por lojas de conserto de celulares, servindo como:
+Criar uma base escalável para futuras melhorias, como relatórios, análise de dados e autenticação avançada.
 
-* Projeto de estudo
-* Treino prático de desenvolvimento web
-* Base para evolução futura no back-end
+🧩 Funcionalidades Implementadas e em Desenvolvimento
+Funcionalidades atuais
 
----
+Front-end funcional
 
-## 🧩 Funcionalidades (em desenvolvimento)
+Tela de login separada para segurança das informações.
 
-### Front-end (fase inicial)
+Página inicial (Home) com navegação básica.
 
-* Tela de login
-* Página inicial (Home)
-* Seção "Sobre"
-* Página de contato
+Seções de "Sobre" e "Contato".
 
-Inicialmente, o front-end será simples, priorizando estrutura e funcionalidade.
+Menu lateral com acesso a cadastros e consultas de clientes, produtos, vendas e estoque.
 
-### Próximas etapas planejadas
+Cadastro e consulta
 
-* Ajustes visuais e melhorias no layout
-* Implementação da responsividade
-* Desenvolvimento do back-end
-* Integração com banco de dados
-* Implementação de funcionalidades completas para gestão da loja
+Registro de clientes, produtos e vendas.
 
----
+Controle de estoque com registro de retiradas por data e quantidade.
 
-## 🛠️ Tecnologias utilizadas
+Estrutura de dados
 
-### Front-end
+Utilização de arquivos JSON para armazenamento inicial e persistência de dados.
 
-* HTML5
-* CSS3
-* JavaScript (básico)
+Funcionalidades planejadas
 
-> O foco atual do projeto está na estrutura e organização do front-end, servindo como base para o desenvolvimento do back-end futuramente.
+Desenvolvimento de back-end em Python, com integração a banco de dados.
 
----
+Sistema financeiro completo (entrada, saída, contas, relatórios).
 
-## 📚 Status do projeto
+Relatórios detalhados e análise de dados de vendas e estoque.
 
-🚧 **Em desenvolvimento**
-Projeto em fase inicial, sujeito a mudanças frequentes e refatorações.
+Implementação de autenticação e permissões de usuários.
 
----
+Aprimoramento da interface para responsividade e experiência do usuário.
 
-## 👩‍💻 Observações importantes
+🛠️ Tecnologias Utilizadas
+Front-end
 
-Este projeto está sendo desenvolvido **individualmente**, com o objetivo principal de aprendizado.
+HTML5 – Estrutura semântica do sistema.
 
-O front-end pode conter limitações visuais ou erros de iniciante, pois meu foco de carreira está direcionado para **back-end**.
-A ideia é, futuramente, aprimorar a interface ou até mesmo repassar essa parte para alguém especializado em front-end.
+CSS3 – Layout, estilos e responsividade básica.
 
----
+JavaScript – Funcionalidades interativas e manipulação de dados.
 
-## 🚀 Melhorias futuras
+Back-end (planejado)
 
-* Sistema completo de gerenciamento de serviços
-* Cadastro de clientes e produtos
-* Controle de estoque
-* Módulo financeiro
-* Relatórios e análises
-* Sistema de autenticação e permissões
+Python – Lógica do sistema, processamento de dados e integrações.
 
----
+JSON – Armazenamento inicial de dados (clientes, produtos, vendas, estoque).
 
-## 📄 Licença
+Futuro: Banco de dados relacional ou NoSQL para persistência avançada.
 
-Projeto de estudo, desenvolvido para fins educacionais.
+📈 Status do Projeto
+
+🚧 Em desenvolvimento
+O projeto está em fase inicial, com o front-end funcional e algumas funcionalidades de cadastro e consulta implementadas. Está sujeito a melhorias contínuas, refatorações e expansão de recursos.
+
+👩‍💻 Observações
+
+Projeto desenvolvido individualmente, com foco no aprendizado e evolução profissional em desenvolvimento web e back-end.
+
+O front-end atual é funcional, mas pode ser aprimorado visualmente ou delegado a profissionais especializados futuramente.
+
+O projeto demonstra competências em organização de dados, desenvolvimento modular, estruturação de front-end e planejamento de back-end.
+
+🚀 Próximos Passos
+
+Completar o back-end com integração ao banco de dados.
+
+Implementar controle financeiro e relatórios detalhados.
+
+Adicionar autenticação de usuários e permissões de acesso.
+
+Melhorar a responsividade e experiência do usuário no front-end.
+
+Evoluir para um sistema completo e escalável para gestão de assistência técnica.
+
+📄 Licença
+
+Projeto de estudo, desenvolvido para fins educacionais e aprimoramento técnico.
