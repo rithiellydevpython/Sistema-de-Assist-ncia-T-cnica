@@ -1,0 +1,189 @@
+marca,modelo,codigo,troca_tela,troca_bateria,troca_conector
+Samsung,a10,a105m,250,120,120
+Samsung,a20,a205m,0,0,0
+Samsung,a30,a305m,0,0,0
+Apple,iphone 8,iphone8,0,0,0
+Apple,iphone x,iphonex,0,0,0
+Apple,iphone 11,iphone11,0,0,0  
+Apple,iphone 12,iphone12,0,0,0
+Xiaomi,redmi 9,redmi9,200,100,100
+Xiaomi,redmi note 9,redminote9,250,120,120
+Xiaomi,mi 10,mi10,300,150,150
+Xiaomi,mi 11,mi11,350,180,180
+Motorola,moto g7,motog7,220,110,110 
+Motorola,moto g8,motog8,250,120,120
+Motorola,moto g9,motog9,280,140,140
+Motorola,moto g10,motog10,300,150,150
+Motorola,moto g20,motog20,320,160,160
+Motorola,moto g30,motog30,350,180,180
+Motorola,moto g50,motog50,400,200,200
+Motorola,moto g60,motog60,450,220,220
+Motorola,moto g100,motog100,500,250,250
+Motorola,edge 20,edge20,600,300,300
+Motorola,edge 20 pro,edge20pro,700,350,350
+Motorola,edge 30,edge30,750,380,380
+Motorola,edge 30 pro,edge30pro,800,400,400
+Motorola,razr razr,razr,900,450,450
+Motorola,defy defy,defy,1000,500,500
+Nokia,5.3,nokia53,200,100,100
+Nokia,6.2,nokia62,250,120,120
+Nokia,7.2,nokia72,300,150,150
+Nokia,8.3,nokia83,350,180,180
+Nokia,9.3,nokia93,400,200,200
+Nokia,x20,nokiax20,450,220,220
+Nokia,x30,nokiax30,500,250,250
+Huawei,p30 lite,p30lite,300,150,150
+Huawei,p40 lite,p40lite,350,180,180
+Huawei,p50 lite,p50lite,400,200,200
+Huawei,y6p,y6p,200,100,100
+Huawei,y7p,y7p,250,120,120
+Huawei,y9a,y9a,300,150,150
+Huawei,nova 5t,nova5t,350,180,180
+Huawei,nova 7i,nova7i,400,200,200
+Huawei,nova 8i,nova8i,450,220,220
+Huawei,nova 9,nova9,500,250,250
+Huawei,nova 10,nova10,550,280,280
+Huawei,mate 20 lite,mate20lite,600,300,300
+Huawei,mate 30 pro,mate30pro,700,350,350
+Huawei,mate 40 pro,mate40pro,800,400,400
+Huawei,p50 pro,p50pro,900,450,450
+Huawei,p60 pro,p60pro,1000,500,500
+LG,k41s,k41s,200,100,100
+LG,k51s,k51s,250,120,120
+LG,k61,k61,300,150,150
+LG,velvet,velvet,400,200,200
+LG,wing,wing,500,250,250
+LG,v60 thinq,v60thinq,600,300,300
+LG,g8x thinq,g8xthinq,700,350,350
+LG,g7 thinq,g7thinq,800,400,400
+LG,g6 thinq,g6thinq,900,450,450
+LG,v50 thinq,v50thinq,1000,500,500
+Sony,xperia 10 ii,xperia10ii,400,200,200
+Sony,xperia 10 iii,xperia10iii,450,220,220
+Sony,xperia 1 ii,xperia1ii,600,300,300
+Sony,xperia 1 iii,xperia1iii,700,350,350
+Sony,xperia 5 ii,xperia5ii,500,250,250
+Sony,xperia 5 iii,xperia5iii,550,280,280
+Sony,xperia l4,xperial4,300,150,150
+Sony,xperia l3,xperial3,250,120,120
+Sony,xperia xz2,xperiazx2,800,400,400
+Sony,xperia xz3,xperiazx3,900,450,450
+Sony,xperia pro,xperiapro,1000,500,500
+LG,velvet 2 pro,velvet2pro,1100,550,550
+Samsung,s20 fe,s20fe,600,300,300
+Samsung,s21,s21,700,350,350
+Samsung,s22,s22,800,400,400
+Samsung,s23,s23,900,450,450
+Samsung,s20 ultra,s20ultra,1000,500,500
+Apple,iphone 13,iphone13,1100,550,550
+Apple,iphone 14,iphone14,1200,600,600
+Apple,iphone 14 pro,iphone14pro,1300,650,650
+Apple,iphone 14 pro max,iphone14promax,1400,700,700
+Apple,iphone 15,iphone15,1500,750,750
+Apple,iphone 15 pro,iphone15pro,1600,800,800
+Apple,iphone 15 pro max,iphone15promax,1700,850,850
+Apple,iphone se (2020),iphonese2020,500,250,250
+Apple,iphone se (2022),iphonese2022,600,300,300
+Apple,iphone xr,iphonexr,400,200,200
+Apple,iphone xs,iphonexs,450,220,220
+Apple,iphone xs max,iphonexsmax,500,250,250
+Apple,iphone 12 mini,iphone12mini,550,280,280
+Apple,iphone 12 pro,iphone12pro,600,300,300
+Apple,iphone 12 pro max,iphone12promax,650,320,320
+Apple,iphone 13 mini,iphone13mini,700,350,350
+Apple,iphone 13 pro,iphone13pro,750,380,380
+Apple,iphone 13 pro max,iphone13promax,800,400,400
+Apple,iphone 14 plus,iphone14plus,900,450,450
+Apple,iphone 15 plus,iphone15plus,1000,500,500
+Apple,iphone 11 pro,iphone11pro,1200,600,600
+Apple,iphone 11 pro max,iphone11promax,1300,650,650
+Samsung,a50,a505m,0,0,0
+Samsung,a70,a705m,0,0,0
+Samsung,a80,a805m,0,0,0
+Samsung,a90,a905m,0,0,0
+Samsung,s10e,s10e,500,250,250
+Samsung,s10,s10,600,300,300
+Samsung,s10 plus,s10plus,700,350,350
+Samsung,s20,s20,800,400,400
+Samsung,s20 plus,s20plus,900,450,450
+Samsung,s20 ultra,s20ultra,1000,500,500
+Samsung,s21 ultra,s21ultra,1100,550,550
+Samsung,s22 ultra,s22ultra,1200,600,600
+Samsung,s23 ultra,s23ultra,1300,650,650
+Xiaomi,redmi note 10,redminote10,300,150,150
+Xiaomi,redmi note 10 pro,redminote10pro,350,180
+Xiaomi,redmi note 11,redminote11,400,200,200
+Xiaomi,redmi note 11 pro,redminote11pro,450,220
+Xiaomi,redmi note 12,redminote12,500,250,250
+Xiaomi,redmi note 12 pro,redminote12pro,550,280
+Xiaomi,mi 11 lite,mi11lite,600,300,300
+Xiaomi,mi 11 ultra,mi11ultra,700,350,350
+Xiaomi,mi 12,mi12,800,400,400
+Xiaomi,mi 12 pro,mi12pro,900,450,450
+Xiaomi,mi 13,mi13,1000,500,500
+Xiaomi,mi 13 pro,mi13pro,1100,550,550
+Xiaomi,mi 13 ultra,mi13ultra,1200,600,600
+Xiaomi,redmi k40,redmik40,650,320,320
+Xiaomi,redmi k50,redmik50,750,380,380
+Xiaomi,redmi k60,redmik60,850,420,420
+Xiaomi,redmi k60 pro,redmik60pro,950,470,470
+Xiaomi,black shark 4,blackshark4,1050,520,520
+Xiaomi,black shark 5,blackshark5,1150,570,570
+Xiaomi,black shark 5 pro,blackshark5pro,1250,620,620
+Xiaomi,black shark 6,blackshark6,1350,670,670
+Xiaomi,black shark 6 pro,blackshark6pro,1450,720
+Xiaomi,blackshark6pro,1450,720,720
+Xiaomi,redmi note 10s,redminote10s,320,160,160
+Xiaomi,redmi note 10 pro max,redminote10promax,370,190,190
+Xiaomi,redmi note 11s,redminote11s,420,210,210
+Xiaomi,redmi note 11 pro max,redminote11promax,470,240,240
+Xiaomi,redmi note 12 pro plus,redminote12proplus,520,260,260
+Xiaomi,mi 11i,mi11i,620,310,310
+Xiaomi,mi 12x,mi12x,720,360,360
+Xiaomi,mi 12t,mi12t,820,410,410
+Xiaomi,mi 12t pro,mi12tpro,920,460,460
+Xiaomi,mi 13 lite,mi13lite,1020,510,510
+Xiaomi,mi 13 pro plus,mi13proplus,1120,560,560
+Xiaomi,mi 13 ultra plus,mi13ultraplus,1220,610,610
+Xiaomi,redmi k40 pro,redmik40pro,670,330,330
+Xiaomi,redmi k50 pro,redmik50pro,770,390,390
+Xiaomi,redmi k60e,redmik60e,870,430,430
+Xiaomi,redmi k60 pro plus,redmik60proplus,970,480,480
+Xiaomi,black shark 4 pro,blackshark4pro,1070,530
+Xiaomi,black shark 5 pro plus,blackshark5proplus,1170,580,580
+Xiaomi,black shark 6 pro plus,blackshark6proplus,1270,630,630
+Xiaomi,blackshark6proplus,1270,630,630
+Xiaomi,redmi note 10 lite,redminote10lite,280,140,140
+Xiaomi,redmi note 11 pro 5g,redminote11pro5g,450,220,220
+Xiaomi,redmi note 12 5g,redminote125g,550,280,280
+Xiaomi,redmi note 12 pro 5g,redminote12pro5g,600,300,300
+Xiaomi,mi 12 pro 5g,mi12pro5g,950,470,470
+Xiaomi,mi 13 5g,mi135g,1050,520,520
+Xiaomi,mi 13 pro 5g,mi13pro5g,1150,570,570
+Xiaomi,mi 13 ultra 5g,mi13ultra5g,1250,620,620
+Xiaomi,redmi k50 gaming,redmik50gaming,800,400,400
+Xiaomi,redmi k60 gaming,redmik60gaming,900,450,450
+Xiaomi,redmi k60 pro 5g,redmik60pro5g,1000,500,500
+Xiaomi,black shark 5 pro 5g,blackshark5pro5g,1200,600,600
+Xiaomi,black shark 6 pro 5g,blackshark6pro5g,1300,650,650
+Xiaomi,blackshark6pro5g,1300,650,650        
+Xiaomi,redmi note 10 5g,redminote105g,320,160,160
+Xiaomi,redmi note 10 pro 5g,redminote10pro5g,370,190,190
+Xiaomi,redmi note 11 5g,redminote115g,420,210,210
+Xiaomi,redmi note 11 pro 5g,redminote11pro5g,470,240,240
+Xiaomi,redmi note 12 pro plus 5g,redminote12proplus5g,520,260,260
+Xiaomi,mi 11i 5g,mi11i5g,620,310,310
+Xiaomi,mi 12x 5g,mi12x5g,720,360,360
+Xiaomi,mi 12t 5g,mi12t5g,820,410,410
+Xiaomi,mi 12t pro 5g,mi12tpro5g,920,460,460
+Xiaomi,mi 13 lite 5g,mi13lite5g,1020,510,510
+Xiaomi,mi 13 pro plus 5g,mi13proplus5g,1120,560,560
+Xiaomi,mi 13 ultra plus 5g,mi13ultraplus5g,1220,610,610
+Xiaomi,redmi k40 pro 5g,redmik40pro5g,670,330,330
+Xiaomi,redmi k50 pro 5g,redmik50pro5g,770,390,390
+Xiaomi,redmi k60e 5g,redmik60e5g,870,430,430
+Xiaomi,redmi k60 pro plus 5g,redmik60proplus5g,970,480,480
+Xiaomi,black shark 4 pro 5g,blackshark4pro5g,1070,530,530
+Xiaomi,black shark 5 pro plus 5g,blackshark5proplus5g,1170,580,580
+Xiaomi,black shark 6 pro plus 5g,blackshark6proplus5g,1270,630,630
+

@@ -5,81 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Clientes</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <script src="/static/js/scripts.js" defer></script>
+    <link rel="stylesheet" href="tabela.css">
 </head>
 
 <body>
-    <header>
-        <h1>Consulta de Clientes</h1>
-    </header>
+   
     <main>
         <section class="search-section">
             <input type="text" id="searchInput" placeholder="Pesquisar clientes..." onkeyup="filterClients()">
         </section>
+        
         <section class="table-section">
-<table id="clientsTable">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
+            <table id="clientsTable" class="tableclass">
+                <caption>Consulta de Clientes</caption>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-    <tbody>
+                <tbody>
 
-        <!-- CLIENTE -->
-        <tr>
-            <td>{{ cliente.nome }}</td>
-            <td>{{ cliente.email }}</td>
-            <td>{{ cliente.telefone }}</td>
-            <td>
-                <a href="/clientes/editar/{{ cliente.id }}">Editar</a> |
-                <a href="/clientes/excluir/{{ cliente.id }}"
-                   onclick="return confirm('Tem certeza que deseja excluir este cliente?');">
-                   Excluir
-                </a>
-            </td>
-        </tr>
+                    <!-- CLIENTE -->
+                    <tr>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td>{{ cliente.telefone }}</td>
+                        <td>
+                            <a href="/clientes/editar/{{ cliente.id }}">Editar</a> |
+                            <a href="/clientes/excluir/{{ cliente.id }}"
+                                onclick="return confirm('Tem certeza que deseja excluir este cliente?');">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
 
-        <!-- DETALHES / HISTÓRICO DE SERVIÇOS -->
-        <tr class="linha-detalhe">
-            <td colspan="4">
+                    <!-- DETALHES / HISTÓRICO DE SERVIÇOS -->
+                    <tr class="linha-detalhe">
+                        <td colspan="4">
 
-                <table class="tabela-servicos">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Serviço</th>
-                            <th>Valor</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
+                            <table class="tabela-servicos">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Serviço</th>
+                                        <th>Valor</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>10/01/2024</td>
-                            <td>Troca de tela</td>
-                            <td>R$ 300,00</td>
-                            <td>Finalizado</td>
-                        </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>10/01/2024</td>
+                                        <td>Troca de tela</td>
+                                        <td>R$ 300,00</td>
+                                        <td>Finalizado</td>
+                                    </tr>
 
-                        <tr>
-                            <td>20/02/2024</td>
-                            <td>Formatação</td>
-                            <td>R$ 150,00</td>
-                            <td>Em andamento</td>
-                        </tr>
-                    </tbody>
-                </table>
+                                    <tr>
+                                        <td>20/02/2024</td>
+                                        <td>Formatação</td>
+                                        <td>R$ 150,00</td>
+                                        <td>Em andamento</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-            </td>
-        </tr>
+                        </td>
+                    </tr>
 
-    </tbody>
-</table>
+                </tbody>
+            </table>
 
         </section>
     </main>

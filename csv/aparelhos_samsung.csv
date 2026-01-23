@@ -1,0 +1,67 @@
+marca,modelo,codigo,troca_tela,troca_bateria,troca_conector
+Samsung,a10,a105m,250,120,120
+Samsung,a20,a205m,0,0,0
+Samsung,a30,a305m,0,0,0
+Samsung,s20 fe,s20fe,600,300,300
+Samsung,s21,s21,700,350,350
+Samsung,s22,s22,800,400,400
+Samsung,s23,s23,900,450,450
+Samsung,s20 ultra,s20ultra,1000,500,500
+Samsung,a50,a505m,0,0,0
+Samsung,a70,a705m,0,0,0
+Samsung,a80,a805m,0,0,0
+Samsung,a90,a905m,0,0,0
+Samsung,s10e,s10e,500,250,250
+Samsung,s10,s10,600,300,300
+Samsung,s10 plus,s10plus,700,350,350
+Samsung,s20,s20,800,400,400
+Samsung,s20 plus,s20plus,900,450,450
+Samsung,s20 ultra,s20ultra,1000,500,500
+Samsung,s21 ultra,s21ultra,1100,550,550
+Samsung,s22 ultra,s22ultra,1200,600,600
+Samsung,s23 ultra,s23ultra,1300,650,650
+Samsung,m31,m315f,400,200,200
+Samsung,m32,m325f,450,220,220
+Samsung,m51,m515f,500,250,250
+Samsung,m52,m525f,550,280,280
+Samsung,m53,m535f,600,300,300
+Samsung,m62,m625f,700,350,350
+Samsung,m63,m635f,800,400,400
+Samsung,m73,m735f,900,450,450
+Samsung,m33,m335f,1000,500,500
+Samsung,m13,m135f,300,150,150
+Samsung,a12,a125m,350,180,180
+Samsung,a32,a325m,400,200,200
+Samsung,a52,a525m,500,250,250
+Samsung,a72,a725m,600,300,300
+Samsung,a53,a535m,700,350,350
+Samsung,a73,a735m,800,400,400
+Samsung,a14,a145m,450,220,220
+Samsung,a34,a345m,550,280,280
+Samsung,a54,a545m,650,320,320
+Samsung,a24,a245m,500,250,250
+Samsung,a04s,a045m,200,100,100
+Samsung,a04,a045m,250,120,120   
+Samsung,a03s,a035m,150,80,80
+Samsung,a03,a035m,180,90,90
+Samsung,f62,f625f,750,380,380
+Samsung,f52,f525f,650,320,320
+Samsung,f42,f425f,550,280,280
+Samsung,f22,f225f,450,220,220
+Samsung,f12,f125f,350,180,180
+Samsung,galaxy z flip3,galaxyzflip3,2000,1000,1000
+Samsung,galaxy z fold3,galaxyzfold3,2500,1250
+Samsung,galaxy z flip4,galaxyzflip4,2200,1100,1100
+Samsung,galaxy z fold4,galaxyzfold4,2700,1350,1350
+Samsung,galaxy z flip5,galaxyzflip5,2400,1200,1200
+Samsung,galaxy z fold5,galaxyzfold5,2900,1450,1450
+Samsung,nota 10 lite,nota10lite,800,400,400
+Samsung,nota 20,nota20,900,450,450
+Samsung,nota 20 ultra,nota20ultra,1200,600,600
+Samsung,nota 21 ultra,nota21ultra,1300,650,650
+Samsung,nota 22 ultra,nota22ultra,1400,700,700
+Samsung,nota 23 ultra,nota23ultra,1500,750,750
+Samsung,nota 30 ultra,nota30ultra,1600,800,800
+Samsung,nota 40 ultra,nota40ultra,1700,850,850
+Samsung,nota 50 ultra,nota50ultra,1800,900,900
+Samsung,nota 60 ultra,nota60ultra,1900,950,950

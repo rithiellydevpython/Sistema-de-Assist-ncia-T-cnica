@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
 </html>
+
+<body>
 
 <header>
     <h1>Cadastro de Clientes</h1>
 </header>
 
-<body>
-    <main>
-        <section>
+    <div class="container">
+        <section class="form-section">
 
-            <form>
+            <form class="formulario">
 
-                <div>
-                    <label for="text">Nome</label>
+                <div class="form-label">
+                    <label class="label" for="number"> for="text">Nome</label>
                     <input tipe="text" required>
                 </div>
 
-                <div>
-                    <label for="text">Número</label>
+                <div class="form-label">
+                    <label class="label" for="number"> for="text">Número</label>
                     <input tipe="number" required>
                 </div>
- 
+
                 <!--gerar um id na hora do cadastro para o cliente-->
 
-                <div>
-                    <label for="text">Endereço</label>
+                <div class="form-label">
+                    <label class="label" for="number"> for="text">Endereço</label>
                     <input tipe="text" required>
                 </div>
 
                 <div>
-                    <label for="text">CPF</label>
+                    <label class="label" for="number"> for="text">CPF</label>
                     <input tipe="number" required>
                 </div>
-                
+
+                <button class="btn-cadastrar" type="submit">cadastrar</button>
             </form>
         </section>
-    </main>
+    </div>
 </body>

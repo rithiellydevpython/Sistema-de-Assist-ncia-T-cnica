@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
 
 <header>
-
+   <h1>Cadastro de serviço</h1>
 </header>
 
     <div class="container">
-        <section>
+        <section class="form-section">
 
-             <h1>Cadastro de serviço</h1>
+            <form class="formulario">
 
-                <form class="formulario">
+                <div class="form-label">
+                    <label class="label" for="number" for="text"> Codigo: </label>
+                    <input type="number" id="codigo" name="codigo" required>
+                </div>
 
-                    <div class="form-label">
-                        <label for="text"> Codigo: </label>
-                        <input type="number" id="codigo" name="codigo" required>
-                    </div>
+                <div class="form-label">
+                    <label class="label" for="number" for="text"> Serviço realizado </label>
+                    <input type="text" id="servico" name="servico" required>
+                </div>
 
-                    <div class="form-label">
-                        <label for="text"> Serviço realizado </label>
-                        <input type="text" id="servico" name="servico" required>
-                    </div>
+                <div class="form-label">
+                    <label class="label" for="number" for="text"> valor </label>
+                    <!--linkar com o dicionario de valor de serviço-->
+                    <input type="number" id="valor" name="valor" required>
+                </div>
 
-                    <div class="form-label">
-                        <label for="text"> valor </label> <!--linkar com o dicionario de valor de serviço-->
-                        <input type="number" id="valor" name="valor" required>
-                    </div>
-
-                    <button type="submit">cadastrar</button>
-                </form>
+                <button class="btn-cadastrar" type="submit">cadastrar</button>
+            </form>
 
         </section>
     </div>
 
 </body>
-
-
-
-    

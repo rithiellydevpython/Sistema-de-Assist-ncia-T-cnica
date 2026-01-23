@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
-<header>
 
+<header>
+    <h1>Cadastro de vendas</h1>
 </header>
 
-<section>
-   <div>
+    <div class="container">
+        <section class="form-section">
 
-    <h1>Cadastro de vendas</h1>
+            <form class="formulario">
 
-    <form>
+                <div>
+                    <label class="label" for="number" for="text">Marca</label>
+                    <input type="text" id="marca" required>
+                </div>
 
-        <div>
-            <label for="text">Marca</label>
-            <input type="text" id="marca" required>
-        </div>
+                <div>
+                    <label class="label" for="number" for="text">Modelo</label>
+                    <input type="text" id="marca" required>
+                </div>
 
-        <div>
-            <label for="text">Modelo</label>
-            <input type="text" id="marca" required>
-        </div>
+                <div>
+                    <label class="label" for="number" for="text">Valor</label>
+                    <input type="text" id="marca" required>
+                </div>
 
-        <div>
-            <label for="text">Valor</label>
-            <input type="text" id="marca" required>
-        </div>
+                <div>
+                    <label class="label" for="number" for="text">Data</label>
+                    <input type="text" id="marca" required>
+                </div> <!--linkar um datetime para gerar a data garantia altomaticamente-->
 
-        <div>
-            <label for="text">Data</label>
-            <input type="text" id="marca" required>
-        </div> <!--linkar um datetime para gerar a data garantia altomaticamente-->
-
-    </form>
-   </div>
-</section>
+                <button class="btn-cadastrar" type="submit">cadastrar</button>
+            </form>
+    </div>
+    </section>
 
 </body>
