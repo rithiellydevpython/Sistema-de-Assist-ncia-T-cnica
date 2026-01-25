@@ -66,7 +66,7 @@ header{
 
 button {
     padding: 10px 15px;
-    background-color: #28a745;
+    background-color: #28a745; 
     color: white;
     border: none;
     border-radius: 4px;
@@ -74,5 +74,5 @@ button {
 }
 
 button:hover {
-    background-color: #f85858;
+    background-color:#23af43;
 }
