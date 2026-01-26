@@ -5,34 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Vendas</title>
-    <link rel="stylesheet" href="./assets/css/tabela.css">
+    <link rel="stylesheet" href="../assets/css/tabela.css">
 
 </html>
 
 <body>
 
-    <section class="table-section">
+    <main class="container">
 
-        <table class="tableclass">
-            <caption>Consulta de Vendas</caption>
-            <thead>
-                <tr>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Valor</th>
-                    <th>Data</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Exemplo de linha de venda -->
-                <tr>
-                    <td>Exemplo</td>
-                    <td>Exemplo</td>
-                    <td>R$ 10.000,00</td>
-                    <td>01/01/2024</td>
-                </tr>
-                <!-- Adicione mais linhas conforme necessário -->
-            </tbody>
-        </table>
-    </section>
+        <section class="search-section">
+            <label for="searchInput">Consulta de vendas:</label>
+            <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar clientes..."
+                onkeyup="filterClients()">
+        </section>
+
+        <section class="table-section">
+
+            <table class="tableclass">
+                <caption class="table-caption">Consulta de Vendas</caption>
+                <thead class="table-header">
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exemplo de linha de venda -->
+                    <tr>
+                        <td>Exemplo</td>
+                        <td>Exemplo</td>
+                        <td>R$ 10.000,00</td>
+                        <td>01/01/2024</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
 </body>

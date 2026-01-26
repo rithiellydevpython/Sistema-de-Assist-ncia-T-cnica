@@ -5,32 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de serviço</title>
-    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="../assets/css/tabela.css">
+</head>
 
 <body>
 
-    <section class="table-section">
-        <table class="tableclass">
-            <caption>Consulta de Serviços</caption>
-            <thead>
-                <tr>
-                    <th>Serviço</th>
-                    <th>Cliente</th>
-                    <th>Data Agendada</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Serviço</td>
-                    <td>João Silva</td>
-                    <td>15/06/2024</td>
-                    <td>Pendente</td>
-                </tr>
+    <main class="container">
 
-            </tbody>
+        <section class="search-section">
+            <label for="searchInput">Pesquisar Cliente:</label>
+            <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar clientes..."
+                onkeyup="filterClients()">
+        </section>
 
-        </table>
+        <section class="table-section">
+            <table class="tableclass">
+                <caption class="table-caption">Consulta de Serviços</caption>
+                <thead class="table-header">
+                    <tr>
+                        <th>Serviço</th>
+                        <th>Cliente</th>
+                        <th>Data Agendada</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Serviço</td>
+                        <td>João Silva</td>
+                        <td>15/06/2024</td>
+                        <td>Pendente</td>
+                    </tr>
 
-    </section>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
 </body>
