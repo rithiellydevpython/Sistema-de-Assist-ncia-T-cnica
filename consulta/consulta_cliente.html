@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Clientes</title>
-    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="../assets/css/tabela.css">
 </head>
 
 <body>
-   
-    <main>
+
+    <main class="container">
+
         <section class="search-section">
-            <input type="text" id="searchInput" placeholder="Pesquisar clientes..." onkeyup="filterClients()">
+            <label for="searchInput">Pesquisar Cliente:</label>
+            <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar clientes..." onkeyup="filterClients()">
         </section>
-        
+
         <section class="table-section">
             <table id="clientsTable" class="tableclass">
-                <caption>Consulta de Clientes</caption>
-                <thead>
+                <caption class="table-caption">Consulta de Clientes</caption>
+                <thead class="table-header">
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
@@ -29,7 +31,6 @@
 
                 <tbody>
 
-                    <!-- CLIENTE -->
                     <tr>
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.email }}</td>
@@ -46,9 +47,10 @@
                     <!-- DETALHES / HISTÓRICO DE SERVIÇOS -->
                     <tr class="linha-detalhe">
                         <td colspan="4">
-
                             <table class="tabela-servicos">
-                                <thead>
+                                <caption class="table-caption">Histórico de Serviços</caption>
+                                <thead class="table-header">
+
                                     <tr>
                                         <th>Data</th>
                                         <th>Serviço</th>
