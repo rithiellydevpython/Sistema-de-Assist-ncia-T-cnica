@@ -1,38 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Sistema de Assistência Técnica</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Sistema de Assistência Técnica</h1>  <p>usuario@gmail.com</p> <!--exemplo de como vai mostrar quem esta logado-->
-</header>
 
-<main>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section>
+    <div class="container-about">
+        <section id="about">
+            <h2>Sobre o projeto</h2>
 
-        <h2>Serviços do dia</h2>
-        <!--linkar os serviços do dia aqui-->
+            <p>
+                Este projeto está em desenvolvimento e tem como objetivo a criação de um sistema de gerenciamento de
+                serviços para uma loja de conserto de celulares.
+                A aplicação permitirá o cadastro e a consulta de serviços, o gerenciamento de clientes e o controle
+                financeiro, entre outras funcionalidades essenciais
+                para o funcionamento da loja.
+            </p>
+            <p>
+                O desenvolvimento do front-end teve início em 18/01/2026 e, no momento, não há uma previsão definida
+                para a conclusão do projeto. Nesta fase inicial,
+                o sistema contará com funcionalidades básicas, como tela de login, página inicial (Início), seção Sobre
+                e Contato.
+            </p>
+            <p>
+                Após a conclusão da estrutura inicial do front-end, o foco será a implementação da responsividade,
+                seguida pelo desenvolvimento do back-end, onde serão
+                aplicadas regras de negócio, segurança e persistência de dados.
+            </p>
+            <p>
+                Este projeto está sendo desenvolvido individualmente, com fins de aprendizado e aprimoramento em
+                desenvolvimento web. Por esse motivo, ajustes e melhorias
+                contínuas serão realizados ao longo do processo, especialmente na parte visual, uma vez que o foco
+                principal da minha formação está no desenvolvimento back-end.
+            </p>
+        </section>
+    </div>
 
-        <h2>Atvidades do dia</h2>
-        <!--linkar atividades que tenham que ser feita do dia ex: contar estoque, atualizar banco 
-        de dados etc.
-        -->
+    <section class="login-section">
 
-        <h2>link do dashbord</h2>
-        <a></a>
+        <h2>Login</h2>
+        <!--formulario de login-->
+
+        <form action="dashboard.html" method="post" class="login-form">
+            <label for="username">Usuário:</label>
+            <input class="login-input" type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input class="login-input" type="password" id="password" name="password" required>
+
+            <button class="login-button" type="submit">Entrar</button>
+
+            <p class="error-message" style="display:none;">Usuário ou senha incorretos!</p>
+
+        </form>
+
     </section>
 
-    <footer>
-        <button>Sair</button>
-    </footer>
-</main>
 
 </body>
 
+</html>

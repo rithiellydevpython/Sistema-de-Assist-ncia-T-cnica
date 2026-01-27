@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    padding:0;
+    background:#6b6a6a;
+    display:flex;
+}
+
+.logout-section {
+    margin:auto;
+    text-align:center;
+    background:#771515;
+    padding:40px;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background-color: white;
+    color: #771515;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
