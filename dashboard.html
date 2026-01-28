@@ -1,55 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="script.js"></script>
-
-    <!-- <title>Meu Projeto</title> -->
-    <!--fazer aqui o menu lateral-->
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
 
 <body>
-    <div class="header-container">
-        <header>
 
-            <nav>
-
-                <div class="nav-bar">
-                    <h1>Sistema de Assistência Técnica</h1>
-
-                    <ul>
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#contact">Contato</a></li>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-image">
+                <img src="./logo.png" alt="Logo">
+            </div>
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-item"><a href="cadastro/cadastro_aparelho.html">Cadastro de Aparelhos</a>
+                        </li>
+                        <li class="sidebar-item"><a href="cadastro/cadastro_cliente.html">Cadastro de Clientes</a>
+                        </li>
+                        <li class="sidebar-item"><a href="cadastro/cadastro_servico.html">Cadastro de Serviços</a>
+                        </li>
+                        <li class="sidebar-item"><a href="cadastro/cadastro_venda.html">Cadastro de Vendas</a></li>
+                        <li class="sidebar-item"><a href="consulta/consulta_clientes.html">Consulta de Clientes</a>
+                        </li>
+                        <li class="sidebar-item"><a href="consulta/consulta_servico.html">Consulta de Serviços</a>
+                        </li>
+                        <!-- criar pagina de aparelhos -->
                     </ul>
+                </nav>
+            </div>
+            <footer class="sidebar-footer">
+                <button class="logout-button">Logout</button>
+            </footer>
+        </aside>
 
-                </div>
+        <main class="main-content">
+            <section id="1">
+                <h2>Serviços do dia</h2>
+                <p>* Troca de tela Samsung A12</p>
+                <p>* Troca de tela Samsung A12</p>
+                <p>* Troca de tela Samsung A12</p>
+                <p>* Troca de tela Samsung A12</p>
+                <!-- linkar todos os serviços do dia com a pagina de consulta de serviços e redirecionar pra ca-->
+            </section>
+            <section id="2">
+                <p>Conteúdo do Teste 2.</p>
+            </section>
+            <section id="3">
+                <p>Conteúdo do Teste 3.</p>
+            </section>
+            <section id="4">
+                <p>Conteúdo do Teste 4.</p>
+            </section>
+            <section id="5">
+                <p>Conteúdo do Teste 5.</p>
+            </section>
+            <section id="6">
+                <p>Conteúdo do Teste 6.</p>
+            </section>
 
-            </nav>
+            <footer>
+                <p>© 2024 Company Name. All rights reserved.</p>
+            </footer>
+        </main>
 
-        </header>
-    </div>
-
-    <section>
-
-        <h2>Serviços do dia</h2>
-        <!--linkar os serviços do dia aqui-->
-
-        <h2>Atvidades do dia</h2>
-        <!--linkar atividades que tenham que ser feita do dia ex: contar estoque, atualizar banco 
-        de dados etc.
-        -->
-
-        <h2>link do dashbord</h2>
-        <a></a>
-    </section>
-
-    <div class="footer-container">
-        <footer>
-            <p>© 2024 Meu Projeto. Todos os direitos reservados.</p>
-        </footer>
-    </div>
     </div>
 </body>
+
+</html>
