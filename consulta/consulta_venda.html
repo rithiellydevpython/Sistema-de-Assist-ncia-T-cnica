@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Vendas</title>
-    <link rel="stylesheet" href="./assets/css/tabela.css">
+    <link rel="stylesheet" href="./../assets/css/tabela.css">
 
 </html>
 
 <body>
 
+    <section class="search-section">
+        <label class="search-label" for="searchInput">Pesquisar Cliente:</label>
+        <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
+            onkeyup="filterClients()">
+    </section>
+
     <section class="table-section">
 
         <table class="tableclass">
-            <caption>Consulta de Vendas</caption>
+            <caption class="caption-table">Consulta de Vendas</caption>
             <thead>
                 <tr>
                     <th>Marca</th>

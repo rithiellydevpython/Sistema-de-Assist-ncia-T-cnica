@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de serviço</title>
-    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="./../assets/css/tabela.css">
 
 <body>
 
+    <section class="search-section">
+        <label class="search-label" for="searchInput">Pesquisar Cliente:</label>
+        <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
+            onkeyup="filterClients()">
+    </section>
+
     <section class="table-section">
         <table class="tableclass">
-            <caption>Consulta de Serviços</caption>
+            <caption class="caption-table">Consulta de Serviços</caption>
             <thead>
                 <tr>
                     <th>Serviço</th>

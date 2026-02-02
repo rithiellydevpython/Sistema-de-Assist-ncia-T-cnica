@@ -84,3 +84,83 @@ footer{
     color: #555;
     margin-top: auto;
 }
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+
+.card-text {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+
+.card-actions {
+    margin-top: auto; /* empurra os botões para o final */
+    display: flex;
+    gap: 10px;
+}
+
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #5f60a8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #ad2929;
+}
+
+.submenu {
+    display: none;
+    margin-left: 20px;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}

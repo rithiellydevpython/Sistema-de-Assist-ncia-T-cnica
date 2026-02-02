@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Clientes</title>
-    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="./../assets/css/tabela.css">
 </head>
 
 <body>
-   
+
     <main>
+
         <section class="search-section">
-            <input type="text" id="searchInput" placeholder="Pesquisar clientes..." onkeyup="filterClients()">
+            <label class="search-label" for="searchInput">Pesquisar Cliente:</label>
+            <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
+                onkeyup="filterClients()">
         </section>
-        
+
         <section class="table-section">
             <table id="clientsTable" class="tableclass">
-                <caption>Consulta de Clientes</caption>
+                <caption class="caption-table">Consulta de Clientes</caption>
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -61,16 +64,17 @@
                                     <tr>
                                         <td>10/01/2024</td>
                                         <td>Troca de tela</td>
-                                        <td>R$ 300,00</td>
-                                        <td>Finalizado</td>
+                                        <td class="valor">R$ 300,00</td>
+                                        <td class="status-finalizado">Finalizado</td>
                                     </tr>
 
                                     <tr>
                                         <td>20/02/2024</td>
                                         <td>Formatação</td>
-                                        <td>R$ 150,00</td>
-                                        <td>Em andamento</td>
+                                        <td class="valor">R$ 150,00</td>
+                                        <td class="status-andamento">Em andamento</td>
                                     </tr>
+
                                 </tbody>
                             </table>
 
@@ -82,6 +86,4 @@
 
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Minha Empresa</p>
-    </footer>
+</body>

@@ -5,71 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body>
 
-
-    <header>
+    <!-- <header>
         <nav>
             <ul>
                 <li><a href="#login">Login</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
-    <div class="container-about">
-        <section id="about">
-            <h2>Sobre o projeto</h2>
+    <main>
+        <div class="container">
 
-            <p>
-                Este projeto está em desenvolvimento e tem como objetivo a criação de um sistema de gerenciamento de
-                serviços para uma loja de conserto de celulares.
-                A aplicação permitirá o cadastro e a consulta de serviços, o gerenciamento de clientes e o controle
-                financeiro, entre outras funcionalidades essenciais
-                para o funcionamento da loja.
-            </p>
-            <p>
-                O desenvolvimento do front-end teve início em 18/01/2026 e, no momento, não há uma previsão definida
-                para a conclusão do projeto. Nesta fase inicial,
-                o sistema contará com funcionalidades básicas, como tela de login, página inicial (Início), seção Sobre
-                e Contato.
-            </p>
-            <p>
-                Após a conclusão da estrutura inicial do front-end, o foco será a implementação da responsividade,
-                seguida pelo desenvolvimento do back-end, onde serão
-                aplicadas regras de negócio, segurança e persistência de dados.
-            </p>
-            <p>
-                Este projeto está sendo desenvolvido individualmente, com fins de aprendizado e aprimoramento em
-                desenvolvimento web. Por esse motivo, ajustes e melhorias
-                contínuas serão realizados ao longo do processo, especialmente na parte visual, uma vez que o foco
-                principal da minha formação está no desenvolvimento back-end.
-            </p>
+            <section class="about">
+
+                <h2>Sobre o projeto</h2>
+
+                <p>
+                    Sobre o sistema
+                    Sistema de gerenciamento desenvolvido com foco no controle de clientes, serviços e informações
+                    financeiras de uma loja.
+                    O projeto está em desenvolvimento contínuo, com o objetivo de aplicar e aprimorar conhecimentos em
+                    desenvolvimento web, priorizando organização, usabilidade e boas práticas.
+                </p>
+
+            </section>
+        </div>
+
+        <section class="login">
+
+            <h2>Login</h2>
+            <!--formulario de login-->
+
+            <form action="dashboard.html" method="post" class="login-form">
+
+                <div class="div-form">
+                    <label class="label-group" for="username">Usuário:</label>
+                    <input class="input-group" type="text" id="username" name="username" required>
+                </div>
+
+                <div class="div-form">
+                    <label class="label-group" for="password">Senha:</label>
+                    <input class="input-group" type="password" id="password" name="password" required>
+                </div>
+
+                <div class="btn-group">
+                    <a href="dashboard.html" class="btn-logout">Entrar</a>
+                </div>
+
+
+                <p class="error-message" style="display:none;">Usuário ou senha incorretos!</p>
+
+            </form>
+
         </section>
-    </div>
 
-    <section class="login-section">
-
-        <h2>Login</h2>
-        <!--formulario de login-->
-
-        <form action="dashboard.html" method="post" class="login-form">
-            <label for="username">Usuário:</label>
-            <input class="login-input" type="text" id="username" name="username" required>
-
-            <label for="password">Senha:</label>
-            <input class="login-input" type="password" id="password" name="password" required>
-
-            <button class="login-button" type="submit">Entrar</button>
-
-            <p class="error-message" style="display:none;">Usuário ou senha incorretos!</p>
-
-        </form>
-
-    </section>
-
+    </main>
 
 </body>
 

@@ -18,35 +18,94 @@
             <div class="sidebar-content">
                 <nav class="sidebar-nav">
                     <ul class="sidebar-menu">
-                        <li class="sidebar-item"><a href="cadastro/cadastro_aparelho.html">Cadastro de Aparelhos</a>
+
+                        <li class="sidebar-item">
+                            <a href="dashboard.html">Dashboard</a>
                         </li>
-                        <li class="sidebar-item"><a href="cadastro/cadastro_cliente.html">Cadastro de Clientes</a>
+
+                        <li class="sidebar-item has-submenu">
+                            <a href="#cadastro">Cadastro</a>
+                            <ul class="submenu">
+                                <li><a href="cadastro/cadastro_cliente.html">Cliente</a></li>
+                                <li><a href="cadastro/cadastro_aparelho.html">Aparelho</a></li>
+                                <li><a href="cadastro/cadastro_servico.html">Serviço</a></li>
+                                <li><a href="cadastro/cadastro_venda.html">Venda</a></li>
+                            </ul>
                         </li>
-                        <li class="sidebar-item"><a href="cadastro/cadastro_servico.html">Cadastro de Serviços</a>
+
+                        <li class="sidebar-item has-submenu">
+                            <a href="#consulta">Consulta</a>
+                            <ul class="submenu">
+                                <li><a href="consulta/consulta_cliente.html">Cliente</a></li>
+                                <li><a href="consulta/consulta_aparelho.html">Aparelho</a></li>
+                                <li><a href="consulta/consulta_servico.html">Serviço</a></li>
+                                <li><a href="consulta/consulta_venda.html">Venda</a></li>
+                            </ul>
                         </li>
-                        <li class="sidebar-item"><a href="cadastro/cadastro_venda.html">Cadastro de Vendas</a></li>
-                        <li class="sidebar-item"><a href="consulta/consulta_clientes.html">Consulta de Clientes</a>
+
+                        <li class="sidebar-item">
+                            <a href="#estoque">Estoque</a>
                         </li>
-                        <li class="sidebar-item"><a href="consulta/consulta_servico.html">Consulta de Serviços</a>
+
+                        <li class="sidebar-item">
+                            <a href="#relatorio">Relatórios</a>
                         </li>
-                        <!-- criar pagina de aparelhos -->
+
+                        <li class="sidebar-item">
+                            <a href="#configuracao">Configuração</a>
+                        </li>
+
                     </ul>
+
+                    <!-- fazer um form para cadastro de estoque e uma tabela para consulta de estoque -->
                 </nav>
             </div>
             <footer class="sidebar-footer">
-                <button class="logout-button">Logout</button>
+                <a href="./logout.html" class="btn-logout">Sair</a>
             </footer>
         </aside>
 
         <main class="main-content">
-            <section id="1">
-                <h2>Serviços do dia</h2>
-                <p>* Troca de tela Samsung A12</p>
-                <p>* Troca de tela Samsung A12</p>
-                <p>* Troca de tela Samsung A12</p>
-                <p>* Troca de tela Samsung A12</p>
-                <!-- linkar todos os serviços do dia com a pagina de consulta de serviços e redirecionar pra ca-->
-            </section>
+
+            <div class="cards-container">
+
+                <div class="card">
+                    <h3 class="card-title">Serviços de Hoje</h3>
+                    <p class="card-text">Troca de tela Samsung S22 OS: 10</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Adiado</button>
+                        <button class="btn btn-secondary">Concluído</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Orçamentos Hoje</h3>
+                    <p class="card-text">Troca de tela Samsung A12 OS: 13</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Confirmar</button>
+                        <button class="btn btn-secondary">Cancelado</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Vendas de Hoje</h3>
+                    <p class="card-text">Venda de Acessórios: R$ 150,00</p>
+                    <p class="card-text">Venda de Aparelhos: R$ 1.200,00</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Ver Detalhes</button>
+                        <button class="btn btn-secondary">Relatório</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
             <section id="2">
                 <p>Conteúdo do Teste 2.</p>
             </section>
