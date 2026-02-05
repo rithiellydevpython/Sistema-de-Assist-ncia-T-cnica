@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>
 
@@ -13,7 +13,7 @@
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-image">
-                <img src="./logo.png" alt="Logo">
+                <img src="./assets/image/logo.png" alt="Logo">
             </div>
             <div class="sidebar-content">
                 <nav class="sidebar-nav">
@@ -23,18 +23,19 @@
                             <a href="dashboard.html">Dashboard</a>
                         </li>
 
-                        <li class="sidebar-item has-submenu">
-                            <a href="#cadastro">Cadastro</a>
+                        <li class="menu-item has-submenu">
+                            <span>Cadastro</span>
                             <ul class="submenu">
                                 <li><a href="cadastro/cadastro_cliente.html">Cliente</a></li>
                                 <li><a href="cadastro/cadastro_aparelho.html">Aparelho</a></li>
                                 <li><a href="cadastro/cadastro_servico.html">Serviço</a></li>
                                 <li><a href="cadastro/cadastro_venda.html">Venda</a></li>
+                                <li><a href="cadastro/cadastro_estoque.html">Estoque</a></li>
                             </ul>
                         </li>
 
-                        <li class="sidebar-item has-submenu">
-                            <a href="#consulta">Consulta</a>
+                        <li class="menu-item has-submenu">
+                            <span>Consulta</span>
                             <ul class="submenu">
                                 <li><a href="consulta/consulta_cliente.html">Cliente</a></li>
                                 <li><a href="consulta/consulta_aparelho.html">Aparelho</a></li>
@@ -44,15 +45,15 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#estoque">Estoque</a>
+                            <a href="cadastro/cadastro_stoque.html">Estoque</a>
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#relatorio">Relatórios</a>
+                            <a href="relatorios.html">Relatórios</a>
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#configuracao">Configuração</a>
+                            <a href="outros_html/configuracao.html">Configuração</a>
                         </li>
 
                     </ul>
@@ -74,8 +75,17 @@
                     <p class="card-text">Troca de tela Samsung S22 OS: 10</p>
 
                     <div class="card-actions">
-                        <button class="btn">Adiado</button>
-                        <button class="btn btn-secondary">Concluído</button>
+                        <button class="btn">Mais detalhes</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3 class="card-title">Serviços Finalizados</h3>
+                    <p class="card-text">Troca de tela Motorola G22 OS: 21</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Mais detalhes</button>
                     </div>
                 </div>
 
@@ -84,29 +94,57 @@
                     <p class="card-text">Troca de tela Samsung A12 OS: 13</p>
 
                     <div class="card-actions">
-                        <button class="btn">Confirmar</button>
-                        <button class="btn btn-secondary">Cancelado</button>
+                        <button class="btn">Mais detalhes</button>
                     </div>
                 </div>
 
                 <div class="card">
                     <h3 class="card-title">Vendas de Hoje</h3>
-                    <p class="card-text">Venda de Acessórios: R$ 150,00</p>
-                    <p class="card-text">Venda de Aparelhos: R$ 1.200,00</p>
+                    <p class="card-text">Vendas: 1.350,00</p>
 
                     <div class="card-actions">
-                        <button class="btn">Ver Detalhes</button>
-                        <button class="btn btn-secondary">Relatório</button>
+                        <button class="btn">Mais detalhes</button>
                     </div>
                 </div>
 
+                <div class="card">
+                    <h3 class="card-title">Serviços em Atraso</h3>
+                    <p class="card-text">Serviços fora do prazo: 3</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Mais detalhes</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Orçamentos Pendentes</h3>
+                    <p class="card-text">Aguardando resposta há +3 dias: 5</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Mais detalhes</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Clientes Aguardando Contato</h3>
+                    <p class="card-text">Clientes sem retorno: 4</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Mais detalhes</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Aparelhos para Retirada</h3>
+                    <p class="card-text">Prontos há mais de 7 dias: 6</p>
+
+                    <div class="card-actions">
+                        <button class="btn">Mais detalhes</button>
+                    </div>
+                </div>
             </div>
 
-
-
-
-
-            <section id="2">
+            <!-- <section id="2"> 
                 <p>Conteúdo do Teste 2.</p>
             </section>
             <section id="3">
@@ -120,13 +158,9 @@
             </section>
             <section id="6">
                 <p>Conteúdo do Teste 6.</p>
-            </section>
+            </section>  -->
 
-            <footer>
-                <p>© 2024 Company Name. All rights reserved.</p>
-            </footer>
         </main>
-
     </div>
 </body>
 

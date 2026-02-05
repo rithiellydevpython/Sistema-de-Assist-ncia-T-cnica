@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Aparelho</title>
+    <title>Consulta estoque</title>
     <link rel="stylesheet" href="./../assets/css/tabela.css">
 </head>
 
 <body>
 
     <section class="search-section">
-        <label class="search-label" for="searchInput">Pesquisar Aparelhos:</label>
-        <!-- <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
-            onkeyup="filterClients()"> -->
-        <input id="searchInput">
-
+        <label for="searchInput">Produtos no estoque:</label>
+        <input type="text" id="searchInput" placeholder="Pesquisar serviços...">
     </section>
 
     <div class="topo-acoes">
@@ -24,20 +21,16 @@
 
     <section class="table-section">
         <table class="tableclass" id="tabela-aparelho">
-            <caption class="caption-table">Consulta de Aparelhos</caption>
+            <caption class="caption-table">Estoque</caption>
             <thead>
                 <tr>
-                    <th>Codigo</th>
                     <th>Marca</th>
                     <th>Modelo</th>
+                    <th>Codigo</th>
+                    <th>Descrição</th>
                 </tr>
             </thead>
-            <tbody id="tbody-aparelho">
-                <tr>
-                    <td>sm a105m</td>
-                    <td>Samsung</td>
-                    <td>A10</td>
-                </tr>
+            <tbody id="tbody-estoque">
 
             </tbody>
 

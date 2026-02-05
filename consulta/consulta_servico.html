@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de serviço</title>
     <link rel="stylesheet" href="./../assets/css/tabela.css">
+</head>
 
 <body>
 
     <section class="search-section">
-        <label class="search-label" for="searchInput">Pesquisar Cliente:</label>
-        <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
-            onkeyup="filterClients()">
+        <label for="searchInput">Pesquisar serviços:</label>
+        <input type="text" id="searchInput" placeholder="Pesquisar serviços...">
     </section>
 
+    <div class="topo-acoes">
+        <a href="../dashboard.html" class="btn-voltar">← Voltar</a>
+    </div>
+
     <section class="table-section">
-        <table class="tableclass">
+        <table class="tableclass" id="tabela-servico">
             <caption class="caption-table">Consulta de Serviços</caption>
             <thead>
                 <tr>
@@ -26,14 +30,13 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody-servico">
                 <tr>
-                    <td>Serviço</td>
-                    <td>João Silva</td>
-                    <td>15/06/2024</td>
-                    <td>Pendente</td>
+                    <td>Formatação</td>
+                    <td>João</td>
+                    <td>10/02/2024</td>
+                    <td class="status status-concluido">Concluído</td>
                 </tr>
-
             </tbody>
 
         </table>

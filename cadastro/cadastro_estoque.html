@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Estoque</title>
+    <link rel="stylesheet" href="../assets/css/form.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Cadastro de Estoque</h1>
+    </header>
+
+    <div class="container">
+        <section class="form-section">
+
+            <form class="formulario" id="form-estoque">
+
+                <div class="form-label">
+                    <label class="label" for="marca-estoque"> Marca: </label>
+                    <input type="text" id="marca-estoque" name="marca" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="modelo-estoque"> Modelo:</label>
+                    <input type="text" id="modelo-estoque" name="modelo" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="codigo-estoque">Codigo: </label>
+                    <input type="number" id="codigo-estoque" name="codigo" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="descricao-estoque">Descrição </label>
+                    <input type="text" id="descricao-estoque" name="descricacao" required>
+                </div>
+
+                <div class="botoes">
+                    <button class="btn-cadastrar" type="submit" id="btn-estoque">Cadastrar</button>
+                    <a href="../dashboard.html" class="btn-voltar" id="estoque-btn-voltar">Voltar</a>
+                </div>
+
+            </form>
+
+        </section>
+    </div>
+
+</body>
+
+</html>

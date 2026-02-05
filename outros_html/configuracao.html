@@ -5,35 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuração</title>
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/configuracao.css">
 </head>
 
 <body>
 
     <div class="container">
-        <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="sidebar-image">
-                <img src="./logo.png" alt="Logo">
+                <img src="../assets/image/logo.png" alt="Logo">
             </div>
             <div class="sidebar-content">
                 <nav class="sidebar-nav">
                     <ul class="sidebar-menu">
-                        <li class="sidebar-item"><a href="dashboard.html">Dashboard</a></li>
-                        <li class="sidebar-item has-submenu">
-                            <a href="#cadastro">Cadastro</a>
+
+                        <li class="sidebar-item">
+                            <a href="dashboard.html">Dashboard</a>
+                        </li>
+
+                        <li class="menu-item has-submenu">
+                            <span>Cadastro</span>
                             <ul class="submenu">
-                                <li><a href="cadastro_cliente.html">Cliente</a></li>
-                                <li><a href="cadastro_aparelho.html">Aparelho</a></li>
-                                <li><a href="cadastro_servico.html">Serviço</a></li>
-                                <li><a href="cadastro_venda.html">Venda</a></li>
+                                <li><a href="cadastro/cadastro_cliente.html">Cliente</a></li>
+                                <li><a href="cadastro/cadastro_aparelho.html">Aparelho</a></li>
+                                <li><a href="cadastro/cadastro_servico.html">Serviço</a></li>
+                                <li><a href="cadastro/cadastro_venda.html">Venda</a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"><a href="#consulta">Consulta</a></li>
-                        <li class="sidebar-item"><a href="#estoque">Estoque</a></li>
-                        <li class="sidebar-item"><a href="#relatorio">Relatórios</a></li>
-                        <li class="sidebar-item"><a href="configuracao.html">Configuração</a></li>
+
+                        <li class="menu-item has-submenu">
+                            <span>Consulta</span>
+                            <ul class="submenu">
+                                <li><a href="consulta/consulta_cliente.html">Cliente</a></li>
+                                <li><a href="consulta/consulta_aparelho.html">Aparelho</a></li>
+                                <li><a href="consulta/consulta_servico.html">Serviço</a></li>
+                                <li><a href="consulta/consulta_venda.html">Venda</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#estoque">Estoque</a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#relatorio">Relatórios</a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="outros_html/configuracao.html">Configuração</a>
+                        </li>
+
                     </ul>
+
                 </nav>
             </div>
             <footer class="sidebar-footer">
@@ -41,7 +64,7 @@
             </footer>
         </aside>
 
-        <!-- MAIN CONTENT -->
+
         <main class="main-content">
             <h2>Página de Configuração</h2>
 
@@ -49,15 +72,15 @@
                 <!-- CARD: Perfil do Usuário -->
                 <div class="card">
                     <h3 class="card-title">Perfil do Usuário</h3>
-                    <form>
+                    <form class="card-form">
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <input class="card-input" type="text" id="nome" name="nome" required>
 
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input class="card-input" type="email" id="email" name="email" required>
 
                         <label for="senha">Senha:</label>
-                        <input type="password" id="senha" name="senha">
+                        <input class="card-input" type="password" id="senha" name="senha">
 
                         <button type="submit" class="btn">Salvar Alterações</button>
                     </form>
@@ -66,7 +89,7 @@
                 <!-- CARD: Preferências -->
                 <div class="card">
                     <h3 class="card-title">Preferências do Sistema</h3>
-                    <form>
+                    <form class="card-form">
                         <label for="tema">Tema:</label>
                         <select id="tema" name="tema">
                             <option value="claro">Claro</option>
@@ -83,18 +106,17 @@
                 <!-- CARD: Segurança -->
                 <div class="card">
                     <h3 class="card-title">Segurança</h3>
-                    <form>
+                    <form class="card-form">
                         <label for="senha-atual">Senha Atual:</label>
-                        <input type="password" id="senha-atual" name="senha-atual" required>
+                        <input class="card-input" type="password" id="senha-atual" name="senha-atual" required>
 
                         <label for="nova-senha">Nova Senha:</label>
-                        <input type="password" id="nova-senha" name="nova-senha" required>
+                        <input class="card-input" type="password" id="nova-senha" name="nova-senha" required>
 
                         <button type="submit" class="btn">Alterar Senha</button>
                     </form>
                 </div>
 
-                <!-- CARD: Backup de Dados -->
                 <div class="card">
                     <h3 class="card-title">Backup de Dados</h3>
                     <p>Você pode baixar um backup completo do sistema ou restaurar dados anteriores.</p>
@@ -104,12 +126,9 @@
                     </div>
                 </div>
             </div>
-
-            <footer>
-                <p>© 2024 Minha Empresa. Todos os direitos reservados.</p>
-            </footer>
         </main>
     </div>
 
 </body>
+
 </html>

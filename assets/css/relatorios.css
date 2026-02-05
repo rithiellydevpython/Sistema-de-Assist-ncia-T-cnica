@@ -1,0 +1,172 @@
+/* ===============================
+   RESET E BASE
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #4A90E2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* ===============================
+   FILTROS (PADRÃO ÚNICO)
+================================ */
+
+.filtro-bloco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  align-items: flex-end;
+}
+
+.filtro-bloco h3 {
+  width: 100%;
+  font-size: 1.1rem;
+  color: #4A90E2;
+  margin-bottom: 8px;
+}
+
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.filtro-campo label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.filtro-campo input,
+.filtro-campo select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filtro-bloco button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filtro-bloco button:hover {
+  background-color: #357ABD;
+}
+
+/* ===============================
+   CARDS / RELATÓRIOS
+================================ */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #4A90E2;
+}
+
+.card p {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.card-actions {
+  margin-top: 12px;
+}
+
+.view-report-button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.view-report-button:hover {
+  background-color: #357ABD;
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+  .filtro-bloco {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-bloco button {
+    width: 100%;
+  }
+}
+
+
+.topo-acoes {
+  margin-bottom: 16px;
+}
+
+.btn-voltar {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ccc;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #b5b5b5;
+}

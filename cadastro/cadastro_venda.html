@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Vendas</title>
     <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
@@ -16,35 +17,35 @@
     <div class="container">
         <section class="form-section">
 
-            <form class="formulario">
+            <form class="formulario" id="form-venda">
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text">Marca</label>
-                    <input type="text" id="marca" required>
+                    <label class="label" for="marca-venda">Marca</label>
+                    <input type="text" id="marca-venda" name="marca" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text">Modelo</label>
-                    <input type="text" id="marca" required>
+                    <label class="label" for="modelo-venda">Modelo</label>
+                    <input type="text" id="modelo-venda" name="modelo" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text">Valor</label>
-                    <input type="text" id="marca" required>
+                    <input type="number" id="valor-venda" name="valor" step="0.01" required>
+                    <input type="text" id="valor-venda" name="valor" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text">Data</label>
-                    <input type="text" id="marca" required>
+                    <label class="label" for="data-venda">Data</label>
+                    <input type="text" id="data-venda"  name="data" required>
                 </div> <!--linkar um datetime para gerar a data garantia altomaticamente-->
 
                 <div class="botoes">
-                    <button class="btn-cadastrar" type="submit">Cadastrar</button>
-                    <a href="../dashboard.html" class="btn-voltar">Voltar</a>
+                    <button class="btn-cadastrar" type="submit" id="btn-venda">Cadastrar</button>
+                    <a href="../dashboard.html" class="btn-voltar" id="venda-btn-voltar">Voltar</a>
                 </div>
 
             </form>
+        </section>
     </div>
-    </section>
 
 </body>

@@ -12,15 +12,18 @@
 
     <main>
 
-        <section class="search-section">
-            <label class="search-label" for="searchInput">Pesquisar Cliente:</label>
-            <input class="search-input" type="text" id="searchInput" placeholder="Pesquisar clientes..."
-                onkeyup="filterClients()">
-        </section>
-
         <section class="table-section">
-            <table id="clientsTable" class="tableclass">
-                <caption class="caption-table">Consulta de Clientes</caption>
+            <section class="search-section">
+                <label for="searchInput">Pesquisar Cliente:</label>
+                <input type="text" id="searchInput" placeholder="Pesquisar clientes...">
+            </section>
+
+            <div class="topo-acoes">
+                <a href="../dashboard.html" class="btn-voltar">← Voltar</a>
+            </div>
+
+            <table id="tabela-cliente" class="tableclass">
+                <caption class="caption-table">Clientes</caption>
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -30,57 +33,8 @@
                     </tr>
                 </thead>
 
-                <tbody>
-
-                    <!-- CLIENTE -->
-                    <tr>
-                        <td>{{ cliente.nome }}</td>
-                        <td>{{ cliente.email }}</td>
-                        <td>{{ cliente.telefone }}</td>
-                        <td>
-                            <a href="/clientes/editar/{{ cliente.id }}">Editar</a> |
-                            <a href="/clientes/excluir/{{ cliente.id }}"
-                                onclick="return confirm('Tem certeza que deseja excluir este cliente?');">
-                                Excluir
-                            </a>
-                        </td>
-                    </tr>
-
-                    <!-- DETALHES / HISTÓRICO DE SERVIÇOS -->
-                    <tr class="linha-detalhe">
-                        <td colspan="4">
-
-                            <table class="tabela-servicos">
-                                <thead>
-                                    <tr>
-                                        <th>Data</th>
-                                        <th>Serviço</th>
-                                        <th>Valor</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>10/01/2024</td>
-                                        <td>Troca de tela</td>
-                                        <td class="valor">R$ 300,00</td>
-                                        <td class="status-finalizado">Finalizado</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>20/02/2024</td>
-                                        <td>Formatação</td>
-                                        <td class="valor">R$ 150,00</td>
-                                        <td class="status-andamento">Em andamento</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-
-                        </td>
-                    </tr>
-
+                <tbody id="tbody-cliente">
+                    <!-- JS vai criar as linhas aqui -->
                 </tbody>
             </table>
 

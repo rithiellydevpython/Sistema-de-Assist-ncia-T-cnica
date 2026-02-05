@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aaparelhos</title>
     <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
@@ -16,34 +17,29 @@
     <div class="container">
         <section class="form-section">
 
-            <form class="formulario">
+            <form class="formulario" id="form-aparelho">
 
                 <div class="form-label">
-                    <label class="label" for="name"> Marca: </label>
-                    <input type="text" id="name" name="name" required>
+                    <label class="label" for="name-aparelho"> Marca: </label>
+                    <input type="text" id="name-aparelho" name="name" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number"> Modelo:</label>
-                    <input type="text" id="modelo" name="modelo" required>
+                    <label class="label" for="modelo-aparelho"> Modelo:</label>
+                    <input type="text" id="modelo-aparelho" name="modelo" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number">Codigo: </label>
-                    <input type="number" id="codigo" name="codigo" required>
+                    <label class="label" for="codigo-aparelho">Codigo: </label>
+                    <input type="number" id="codigo-aparelho" name="codigo" required>
                 </div>
 
                 <div class="botoes">
-                    <button class="btn-cadastrar" type="submit">Cadastrar</button>
-                    <a href="../dashboard.html" class="btn-voltar">Voltar</a>
+                    <button class="btn-cadastrar" type="submit" id="btn-aparelho">Cadastrar</button>
+                    <a href="../dashboard.html" class="btn-voltar" id="btn-dash">Voltar</a>
                 </div>
 
             </form>
-
-            <!-- <section class="botoes">
-                <button class="btn-cadastrar" type="submit">Cadastrar</button>
-                <a href="../dashboard.html" class="btn-voltar">Voltar</a>
-            </section> -->
         </section>
     </div>
 

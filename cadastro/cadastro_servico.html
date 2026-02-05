@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Serviço</title>
     <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
@@ -16,27 +17,36 @@
     <div class="container">
         <section class="form-section">
 
-            <form class="formulario">
+            <form class="formulario" id="form-servico">
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text"> Codigo: </label>
-                    <input type="number" id="codigo" name="codigo" required>
+                    <label class="label" for="codigo-servico"> Codigo: </label>
+                    <input type="number" id="codigo-servico" name="codigo" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text"> Serviço realizado </label>
-                    <input type="text" id="servico" name="servico" required>
+                    <label class="label" for="servico-realizado"> Serviço realizado </label>
+                    <input type="text" id="servico-realizado" name="servico" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number" for="text"> valor </label>
+                    <label class="label" for="valor-servico"> valor </label>
                     <!--linkar com o dicionario de valor de serviço-->
-                    <input type="number" id="valor" name="valor" required>
+                    <input type="number" id="valor-servico" name="valor" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="status-servico">Status</label>
+                    <select id="status-servico" name="status" required>
+                        <option value="em_andamento">Em andamento</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="orcamento">Orçamento</option>
+                    </select>
                 </div>
 
                 <div class="botoes">
-                    <button class="btn-cadastrar" type="submit">Cadastrar</button>
-                    <a href="../dashboard.html" class="btn-voltar">Voltar</a>
+                    <button class="btn-cadastrar" type="submit" id="btn-servico">Cadastrar</button>
+                    <a href="../dashboard.html" class="btn-voltar" id="servico-btn-voltar">Voltar</a>
                 </div>
 
             </form>

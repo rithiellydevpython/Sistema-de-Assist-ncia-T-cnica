@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorios</title>
+    <link rel="stylesheet" href="assets/css/relatorios.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Relatórios</h1>
+    </header>
+
+    <div class="topo-acoes">
+        <a href="dashboard.html" class="btn-voltar">← Voltar</a>
+    </div>
+
+
+    <main>
+
+        <form id="form-filtro-vendas" class="filtro-bloco">
+            <h3>Filtro de Vendas</h3>
+
+            <div class="filtro-campo">
+                <label for="vendas-data-inicio">Data início:</label>
+                <input type="date" id="vendas-data-inicio" name="data_inicio">
+            </div>
+
+            <div class="filtro-campo">
+                <label for="vendas-data-fim">Data fim:</label>
+                <input type="date" id="vendas-data-fim" name="data_fim">
+            </div>
+
+            <button type="submit" id="btn-filtrar-vendas">Filtrar</button>
+        </form>
+
+
+        <form id="form-filtro-os" class="filtro-bloco">
+            <h3>Filtro de OS</h3>
+
+            <div class="filtro-campo">
+                <label for="status-os">Status da OS:</label>
+                <select id="status-os" name="status_os">
+                    <option value="">Todos</option>
+                    <option value="aberta">Aberta</option>
+                    <option value="em_andamento">Em andamento</option>
+                    <option value="concluida">Concluída</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-filtrar-os">Filtrar</button>
+        </form>
+
+
+        <form id="form-filtro-financas" class="filtro-bloco">
+            <h3>Filtro Financeiro</h3>
+
+            <div class="filtro-campo">
+                <label for="tipo-financa">Tipo de Finança:</label>
+                <select id="tipo-financa" name="tipo_financa">
+                    <option value="">Todos</option>
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-filtrar-financas">Filtrar</button>
+        </form>
+
+
+        <div class="cards-container">
+
+            <div class="card">
+                <h3 class="card-title">Relatório de Vendas</h3>
+                <p>Valor total: <span class="valor-vendas">R$ 15.000,00</span></p>
+                <p>Visualize o relatório detalhado de vendas.</p>
+
+                <div class="card-actions">
+                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Relatório de OS</h3>
+                <p>Total de OS: <span class="total-os">120</span></p>
+                <p>Visualize o relatório detalhado de ordens de serviço.</p>
+
+                <div class="card-actions">
+                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Relatório Financeiro</h3>
+                <p>Saldo atual: <span class="saldo-financas">R$ 8.500,00</span></p>
+                <p>Visualize o relatório detalhado de finanças.</p>
+
+                <div class="card-actions">
+                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

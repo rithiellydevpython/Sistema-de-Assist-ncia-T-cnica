@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="../assets/css/form.css">
-
-</html>
 
 <body>
 
@@ -17,33 +16,33 @@
     <div class="container">
         <section class="form-section">
 
-            <form class="formulario">
+            <form class="formulario" id="form-cliente">
 
                 <div class="form-label">
-                    <label class="label" for="text">Nome</label>
-                    <input tipe="text" required>
+                    <label class="label" for="name-cliente">Nome</label>
+                    <input tipe="text" id="name-cliente" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number">Número</label>
-                    <input tipe="number" required>
+                    <label class="label" for="numero-cliente">Número</label>
+                    <input tipe="number" id="numero-cliente" required>
                 </div>
 
                 <!--gerar um id na hora do cadastro para o cliente-->
 
                 <div class="form-label">
-                    <label class="label" for="text">Endereço</label>
-                    <input tipe="text" required>
+                    <label class="label" for="endereco-cliente">Endereço</label>
+                    <input tipe="text" id="endereco-cliente" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="number">CPF</label>
-                    <input tipe="number" required>
+                    <label class="label" for="cpf-cliente">CPF</label>
+                    <input tipe="number" id="cpf-cliente" required>
                 </div>
 
                 <div class="botoes">
-                    <button class="btn-cadastrar" type="submit">Cadastrar</button>
-                    <a href="../dashboard.html" class="btn-voltar">Voltar</a>
+                    <button class="btn-cadastrar" type="submit" id="btn-cliente" >Cadastrar</button>
+                    <a href="../dashboard.html" class="btn-voltar" id="voltar-btn-cliente" >Voltar</a>
                 </div>
                 
             </form>

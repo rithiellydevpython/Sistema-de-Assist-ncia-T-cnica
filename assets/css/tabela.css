@@ -82,3 +82,55 @@ body{
     color: #ffd166;
     font-weight: bold;
 }
+.topo-acoes {
+  margin: 16px;
+}
+
+.btn-voltar {
+  text-decoration: none;
+  background-color: #ccc;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #b5b5b5;
+}
+.topo-acoes {
+  margin: 16px;
+}
+
+.btn-voltar {
+  text-decoration: none;
+  background-color: #ccc;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #b5b5b5;
+}
+
+
+.status {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.status-andamento {
+    background-color: #5d88d8;
+    color: #856404;
+}
+
+.status-concluido {
+    background-color: #6e9cf1;
+    color: #155724;
+}
