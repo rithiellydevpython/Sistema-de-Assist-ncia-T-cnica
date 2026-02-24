@@ -23,6 +23,7 @@ header{
     flex-direction: column;
 }
 
+/* formulario */
 .form-section {
     margin-bottom: 15px;
     padding: 10px;
@@ -63,7 +64,9 @@ header{
     border-radius: 10px;
     cursor: pointer;
 }
+/* fim */
 
+/* botoes */
 .btn-cadastrar {
     padding: 10px 15px;
     background-color: #28a745; 
@@ -89,3 +92,4 @@ button:hover {
     display: flex;
     gap: 10px;
 }
+/* fim */

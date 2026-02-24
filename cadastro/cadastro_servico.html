@@ -20,8 +20,8 @@
             <form class="formulario" id="form-servico">
 
                 <div class="form-label">
-                    <label class="label" for="codigo-servico"> Codigo: </label>
-                    <input type="number" id="codigo-servico" name="codigo" required>
+                    <label class="label" for="modelo-servico"> Modelo do aparelho: </label>
+                    <input type="text" id="modelo-servico" name="modelo" required>
                 </div>
 
                 <div class="form-label">
@@ -30,17 +30,26 @@
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="valor-servico"> valor </label>
-                    <!--linkar com o dicionario de valor de serviço-->
+                    <label class="label" for="cliente-servico"> cliente </label>
+                    <input type="text" id="cliente-servico" name="cliente" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="data-servico">Data de entrega:</label>
+                    <input type="data" id="data-servico" name="data" required>
+                </div>
+
+                <div class="form-label">
+                    <label class="label" for="valor-servico">Valor:</label>
                     <input type="number" id="valor-servico" name="valor" required>
                 </div>
 
                 <div class="form-label">
                     <label class="label" for="status-servico">Status</label>
                     <select id="status-servico" name="status" required>
-                        <option value="em_andamento">Em andamento</option>
+                        <option value="em andamento">Em andamento</option>
                         <option value="concluido">Concluído</option>
-                        <option value="orcamento">Orçamento</option>
+                        <option value="orçamento">Orçamento</option>
                     </select>
                 </div>
 
@@ -52,6 +61,7 @@
             </form>
 
         </section>
+        <script src="../js/cadastro-servico.js"></script>
     </div>
-
+   
 </body>

@@ -11,6 +11,7 @@
     box-sizing: border-box;
 }
 
+/* sidebar */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -48,14 +49,6 @@
     color: rgb(218, 206, 206);
 }
 
-.main-content {
-    padding: 20px;
-    flex: 1;
-    background-color: #e2e1e1;
-    box-sizing: border-box;
-    min-width: 0;
-}
-
 .sidebar-image {
     display: flex;
     justify-content: center;
@@ -70,7 +63,18 @@
     display: block;
     box-sizing: border-box;
 }
+/* fim */
 
+.main-content {
+    padding: 20px;
+    flex: 1;
+    background-color: #e2e1e1;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+
+/* sub-menu */
 .menu-item {
     position: relative;
     padding: 12px;
@@ -108,14 +112,15 @@
 .has-submenu:hover .submenu {
     display: block;
 }
+/* fim */
 
+/* cards */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     box-sizing: border-box;
 }
-
 
 .card {
     background-color: #fff;
@@ -146,7 +151,9 @@
 .card .card-input{
     border-radius: 10px;
 }
+/* fim */
 
+/* botoes */
 .btn{
     padding:8px;
     border-radius:8px;
@@ -163,3 +170,4 @@
     cursor: pointer;
 
 }
+/* fim */
