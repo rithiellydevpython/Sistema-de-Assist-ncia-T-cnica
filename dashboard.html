@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,12 +19,8 @@
                 <nav class="sidebar-nav">
                     <ul class="sidebar-menu">
 
-                        <li class="sidebar-item">
-                            <a href="dashboard.html">Dashboard</a>
-                        </li>
-
                         <li class="menu-item has-submenu">
-                            <span>Cadastro</span>
+                            <span id="cadastro">Cadastro</span>
                             <ul class="submenu">
                                 <li><a href="cadastro/cadastro_cliente.html">Cliente</a></li>
                                 <li><a href="cadastro/cadastro_aparelho.html">Aparelho</a></li>
@@ -56,112 +52,38 @@
                             <a href="outros_html/configuracao.html">Configuração</a>
                         </li>
 
+                        <li class="sidebar-item">
+                            <a href="gerencia.html"> Gerência </a>
+                        </li>
+
                     </ul>
 
-                    <!-- fazer um form para cadastro de estoque e uma tabela para consulta de estoque -->
                 </nav>
+                <footer class="sidebar-footer">
+                    <a href="./logout.html" class="btn-logout">Sair</a>
+                </footer>
             </div>
-            <footer class="sidebar-footer">
-                <a href="./logout.html" class="btn-logout">Sair</a>
-            </footer>
         </aside>
 
-        <main class="main-content">
+        <section class="servico-container" id="servico-container">
 
-            <div class="cards-container">
-
-                <div class="card">
-                    <h3 class="card-title">Serviços de Hoje</h3>
-                    <p class="card-text">Troca de tela Samsung S22 OS: 10</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
+            <div class="servico-content">
+                <div class="servico-topo">
+                    <h2>Bem vindo</h2>
+                    <input type="text" id="buscar" placeholder="Buscar...">
+                    <button id="btnBuscar">Buscar</button>
                 </div>
 
+                <div id="servico-lista" class="servico-grid">
 
-                <div class="card">
-                    <h3 class="card-title">Serviços Finalizados</h3>
-                    <p class="card-text">Troca de tela Motorola G22 OS: 21</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Orçamentos Hoje</h3>
-                    <p class="card-text">Troca de tela Samsung A12 OS: 13</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Vendas de Hoje</h3>
-                    <p class="card-text">Vendas: 1.350,00</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Serviços em Atraso</h3>
-                    <p class="card-text">Serviços fora do prazo: 3</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Orçamentos Pendentes</h3>
-                    <p class="card-text">Aguardando resposta há +3 dias: 5</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Clientes Aguardando Contato</h3>
-                    <p class="card-text">Clientes sem retorno: 4</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Aparelhos para Retirada</h3>
-                    <p class="card-text">Prontos há mais de 7 dias: 6</p>
-
-                    <div class="card-actions">
-                        <button class="btn">Mais detalhes</button>
-                    </div>
                 </div>
             </div>
 
-            <!-- <section id="2"> 
-                <p>Conteúdo do Teste 2.</p>
-            </section>
-            <section id="3">
-                <p>Conteúdo do Teste 3.</p>
-            </section>
-            <section id="4">
-                <p>Conteúdo do Teste 4.</p>
-            </section>
-            <section id="5">
-                <p>Conteúdo do Teste 5.</p>
-            </section>
-            <section id="6">
-                <p>Conteúdo do Teste 6.</p>
-            </section>  -->
+        </section>
 
-        </main>
     </div>
+
+    <script src="./js/dash.js"></script>
 </body>
 
 </html>

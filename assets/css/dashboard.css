@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
     height: 100vh;
     box-sizing: border-box;
 }
@@ -25,6 +23,8 @@ body {
     flex-direction: column;
     width: 200px;
     background-color: #1f2937;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
 .sidebar-content {
@@ -70,6 +70,7 @@ body {
     display: block;
     box-sizing: border-box;
 }
+
 /* fim */
 
 
@@ -77,21 +78,20 @@ body {
     padding: 20px;
     flex: 1;
     background-color: #e2e1e1;
-    /* min-width: 0; flex: 1; */
     box-sizing: border-box;
     min-width: 0;
 }
 
 
 /* botoes */
-.logout-button {
+.logout-button,
+.btn-logout {
     background-color: #247185;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px 0;
     border-radius: 10px;
 }
 
@@ -106,23 +106,11 @@ body {
     cursor: pointer;
 }
 
-.btn-logout {
-
-    padding: 16x;
-    border: none;
-    border-radius: 6px;
-    background-color: #5f60a8;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-
-}
 /* fim */
 
 /* sub-menu */
 .menu-item {
     position: relative;
-    padding: 12px;
     color: #fff;
     cursor: pointer;
 }
@@ -140,14 +128,11 @@ body {
     z-index: 10;
 }
 
-.submenu li {
-    padding: 8px 16px;
-}
-
 .submenu li a {
     color: #fff;
     text-decoration: none;
     display: block;
+    padding: 8px;
 }
 
 .submenu li:hover {
@@ -161,6 +146,7 @@ body {
 span {
     color: white;
 }
+
 /* fim */
 
 
@@ -199,3 +185,51 @@ span {
 }
 
 /* fim */
+
+/* css dos cards no js */
+
+.card-servico {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #f7f6f6;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 15px;
+    color: black;
+    min-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-servico:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.card-servico h3 {
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.card-servico p {
+    margin: 4px 0;
+    border-radius: 6px;
+}
+
+.servico-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#buscar {
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+#btnBuscar {
+    border-radius: 6px;
+    background-color: #1f3ea3c9;
+    color: white;
+}
