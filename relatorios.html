@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatorios</title>
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="assets/css/relatorios.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="../css/botoes.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Relatórios</h1>
+        <h1>Relatórios</h1> 
     </header>
 
     <div class="topo-acoes">
@@ -34,7 +37,7 @@
                 <input type="date" id="vendas-data-fim" name="data_fim">
             </div>
 
-            <button type="submit" id="btn-filtrar-vendas">Filtrar</button>
+            <button class="btn" type="submit" id="btn-filtrar-vendas">Filtrar</button>
         </form>
 
 
@@ -51,9 +54,8 @@
                 </select>
             </div>
 
-            <button type="submit" id="btn-filtrar-os">Filtrar</button>
+            <button class="btn" type="submit" id="btn-filtrar-os">Filtrar</button>
         </form>
-
 
         <form id="form-filtro-financas" class="filtro-bloco">
             <h3>Filtro Financeiro</h3>
@@ -67,9 +69,8 @@
                 </select>
             </div>
 
-            <button type="submit" id="btn-filtrar-financas">Filtrar</button>
+            <button  class="btn" type="submit" id="btn-filtrar-financas">Filtrar</button>
         </form>
-
 
         <div class="cards-container">
 
@@ -79,7 +80,7 @@
                 <p>Visualize o relatório detalhado de vendas.</p>
 
                 <div class="card-actions">
-                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                    <button class="btn" onclick="location.href='relatorios.html'">Ver Relatório</button>
                 </div>
             </div>
 
@@ -89,7 +90,7 @@
                 <p>Visualize o relatório detalhado de ordens de serviço.</p>
 
                 <div class="card-actions">
-                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                    <button class="btn" onclick="location.href='relatorios.html'">Ver Relatório</button>
                 </div>
             </div>
 
@@ -99,11 +100,25 @@
                 <p>Visualize o relatório detalhado de finanças.</p>
 
                 <div class="card-actions">
-                    <button class="view-report-button" onclick="location.href='relatorios.html'">Ver Relatório</button>
+                    <button class="btn" onclick="location.href='relatorios.html'">Ver Relatório</button>
                 </div>
             </div>
         </div>
+
+                <!-- atualizar js para os cards ficarem dinamicos, ou seja, os dados dos cards devem ser preenchidos com base nos filtros aplicados e nas consultas realizadas. -->
+
+        <section class="dash-container">
+
+            <div id="dash-lista" class="dash-grid">
+
+            </div>
+
+        </section>
+
     </main>
+
+    <script src="./js/consulta/"></script>
+
 </body>
 
 </html>

@@ -20,14 +20,14 @@ body {
 }
 
 .topo-estoque h2 {
-    color: #1f2937;
+    color: var(--cor-titulo);
 }
 
 .topo-estoque input {
     padding: 10px;
     width: 300px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--cor-borda-input);
     outline: none;
 }
 
@@ -38,29 +38,6 @@ body {
     gap: 20px;
 }
 
-/* Card */
-.card-estoque {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-}
-
-.card-estoque:hover {
-    transform: translateY(-5px);
-}
-
-.card-estoque h3 {
-    margin: 0 0 10px 0;
-    color: #111827;
-}
-
-.card-estoque p {
-    margin: 4px 0;
-    color: #6b7280;
-    font-size: 14px;
-}
 
 /* Botões */
 .card-estoque .acoes {
@@ -78,11 +55,11 @@ body {
 }
 
 .btn-editar {
-    background-color: #2563eb;
-    color: white;
+    background-color: var(--cor-fundo-botao);
+    color: var(--cor-texto-botao);
 }
 
 .btn-excluir {
-    background-color: #dc2626;
-    color: white;
+    background-color: var(--cor-fundo-botao-excluir);
+    color: var(--cor-texto-botao-excluir);
 }

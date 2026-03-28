@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Serviço</title>
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../assets/css/form.css">
+    <link rel="stylesheet" href="../css/botoes.css">
 </head>
 
 <body>
@@ -20,7 +22,7 @@
             <form class="formulario" id="form-servico">
 
                 <div class="form-label">
-                    <label class="label" for="modelo-servico"> Modelo do aparelho: </label>
+                    <label class="label" for="modelo-servico"> Modelo: </label>
                     <input type="text" id="modelo-servico" name="modelo" required>
                 </div>
 
@@ -30,17 +32,17 @@
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="cliente-servico"> cliente </label>
+                    <label class="label" for="cliente-servico"> cliente: </label>
                     <input type="text" id="cliente-servico" name="cliente" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="data-servico">Data de entrega:</label>
+                    <label class="label" for="data-servico">Data de entrega: </label>
                     <input type="data" id="data-servico" name="data" required>
                 </div>
 
                 <div class="form-label">
-                    <label class="label" for="valor-servico">Valor:</label>
+                    <label class="label" for="valor-servico">Valor: </label>
                     <input type="number" id="valor-servico" name="valor" required>
                 </div>
 
@@ -61,7 +63,7 @@
             </form>
 
         </section>
-        <script src="../js/cadastro-servico.js"></script>
+        <script src="../js/cadastros/cadastro_servico.js"></script>
     </div>
    
 </body>

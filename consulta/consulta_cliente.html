@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Clientes</title>
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="./../assets/css/tabela.css">
+    <link rel="stylesheet" href="../css/botoes.css">
 </head>
 
 <body>
 
     <main>
 
+        <section class="search-section">
+            <label class="search-label" for="searchInput">Pesquisar Aparelhos: </label>
+            <input id="searchInput">
+        </section>
+
         <section class="table-section">
-            <section class="search-section">
-                <label for="searchInput">Pesquisar Cliente:</label>
+            <!-- <section class="search-section">
+                <label for="searchInput">Pesquisar Cliente: </label>
                 <input type="text" id="searchInput" placeholder="Pesquisar clientes...">
-            </section>
+            </section> -->
 
             <div class="topo-acoes">
                 <a href="../dashboard.html" class="btn-voltar">← Voltar</a>
@@ -30,16 +37,15 @@
                         <th>Número</th>
                         <th>Endereço</th>
                         <th>CPF</th>
-                        <!-- <th>Ações</th> -->
                     </tr>
                 </thead>
 
                 <tbody id="tbody-cliente">
-                    <!-- JS vai criar as linhas aqui -->
+
                 </tbody>
             </table>
 
         </section>
     </main>
-    <script src="../js/consulta_cliente.js"> </script>
+    <script src="../js/consulta/consulta_cliente.js"> </script>
 </body>

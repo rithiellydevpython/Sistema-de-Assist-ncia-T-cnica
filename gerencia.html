@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerencia</title>
+    <link rel="stylesheet" href="./assets/css/form.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/botoes.css">
+    <!-- ver pq nao funciona -->
+</head>
+
+<body>
+
+    <header>
+        <h2>Seja bem vindo <!--nome da pessoa cadastrada--></h2>
+        <div>
+            <ul>
+                <li a href="#Compras">Compras</li>
+                <li a href="#saidas">contas</li>    
+                <li a href="#funcionarios">Funcionários</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section" id="Compras"> <!--purchase-->
+
+            <form class="formulario" id="form-compras">
+
+                <div class="form-label">
+                    <label for="valor-compra"> Valor total da compra </label>
+                    <input type="number" id="valor-compra" name="valor">
+                </div>
+
+                <div class="form-label">
+                    <label for="valor-unitario"> Valor unitario da compra </label>
+                    <input type="number" id="valor-unitario" name="valor-unitario">
+                </div>
+
+                <div class="form-label">
+                    <label for="motivo"> Motivo da compra </label>
+                    <input type="text" id="motivo" name="motivo">
+                </div>
+                <div class="btn" id="form-buttons-compras">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+
+        </section>
+        <section class="form-section" id="saidas">
+
+            <form class="formulario" id="form-saidas">
+                <div class="form-label">
+                    <label for="pagamento"> Motivo do pagamento </label>
+                    <input type="text" id="pagamento" name="pagamento">
+                </div>
+
+                <div class="form-label">
+                    <label for="valor-pagamento"> Valor do pagamento </label>
+                    <input type="number" id="valor-pagamento" name="valor-pagamento">
+                </div>
+
+                <div class="form-label">
+                    <label for="metodo-pagamento"> Forma de pagamento </label>
+                    <input type="text" id="metodo-pagamento" name="metodo-pagamento">
+                </div>
+
+                <div class="btn" id="form-buttons-saidas">
+                    <button type="submit">Cadastrar</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="form-section" id="funcionarios">
+            <form class="formulario" id="form-funcionarios">
+
+                <div class="form-label">
+                    <label for="funcionario"> Funcionario </label>
+                    <input type="text" id="funcionario" name="funcionario">
+                </div>
+
+                <div class="form-label">
+                    <label for="salario"> Valor do salario </label>
+                    <input type="number" id="salario" name="salario">
+                </div>
+
+                <div class="form-label">
+                    <label for="metodo-pagamento-salario"> Forma de pagamento </label>
+                    <input type="text" id="metodo-pagamento-salario" name="metodo-pagamento-salario">
+                </div>
+
+                <div class="btn" id="form-button-funcionarios">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+    <script src="./js/gerencia.js"></script>
+</body>
+
+</html>
