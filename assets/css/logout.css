@@ -27,13 +27,3 @@ body{
     gap:20px;
 }
 
-.btn-logout {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 30px;
-    background-color: rgb(209, 199, 199);
-    color: #771515;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-}

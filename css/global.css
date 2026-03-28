@@ -1,0 +1,77 @@
+:root {
+
+    /* fundo geral */
+    --cor-fundo: #0F172A;
+
+    /* textos */
+    --cor-texto-principal: #F1F5F9;
+    --cor-texto-secundario: #94A3B8;
+
+    /* cards */
+    --cor-fundo-card: #1E293B;
+
+    /* inputs */
+    --cor-fundo-input: #1E293B;
+    --cor-texto-input: #F1F5F9;
+    --cor-borda-input: #334155;
+
+    /* botões */
+    --cor-fundo-botao: #3B82F6;
+    --cor-fundo-botao-voltar: #EF4444;
+    --cor-texto-botao: #ffffff;
+    --cor-logout: #EF4444;
+    --cor-logout-hover: #dc2626;
+
+    /* tabela */
+    --cor-tabela: #1E293B;
+    --cor-principal-tabela: #273a58;
+
+    /* ações */
+    --cor-acao-principal: #3B82F6;
+    --cor-sucesso: #22C55E;
+    --cor-erro: #EF4444;
+    --cor-alerta: #F59E0B;
+
+    /* bordas */
+    --cor-borda: #334155;
+
+    /* layout */
+    --raio-padrao: 6px;
+
+    /* sombras */
+    --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --sombra-hover: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+}
+
+header {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    padding: 10px;
+    text-align: center;
+}
+
+/* criar variavel box-shadow: 0 10px 20px rgba(0,0,0,0.3);   box-shadow: 0 4px 10px rgba(0,0,0,0.08);*/

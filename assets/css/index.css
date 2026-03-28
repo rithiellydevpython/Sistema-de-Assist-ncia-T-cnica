@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ main {
     align-items: center;
     width: 100%;
     max-width: 700px;
-    background-color:#f0f0f0;
+    background-color: var(--background-color);
 }
 
 .login {
@@ -50,7 +50,7 @@ main {
 
 .label-group {
     width: 300px;
-    color: black;
+    color: var(--cor-texto-cabecalho);
     margin-bottom: 5px;
     padding: 10px;
 }
@@ -61,12 +61,12 @@ main {
     width: 300px;
 }
 
-.btn-logout {
+ .btn {
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100px;
-    background-color: #6abb7d; /*arrumar cor do botão: #28a745; atual*/
+    background-color: var(--cor-fundo-botao); 
     border-radius: 10px;
     align-items: center;
     padding: 10px;
@@ -74,4 +74,4 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
-
+/* arrumar esse botao conforme a nececidade especifica dele */

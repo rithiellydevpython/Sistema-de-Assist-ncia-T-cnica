@@ -3,11 +3,10 @@ html, body {
   margin: 0;
   font-family: Arial, sans-serif;
 }  
-/* sempre definir um reset para nao quebrar o layout */
 
 header{
-    background-color: rgb(65, 61, 61);
-    color: white;
+    background-color: var(--cor-cabecalho);
+    color: var(--cor-texto-principal);
     padding: 10px;
     text-align: center;
 }
@@ -16,9 +15,6 @@ header{
     width: 100%;
     height: 100%;
     margin: auto;
-    /* padding: 20px; nao colocar pois estoura a largura*/
-    border: 1px solid #ccc;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -47,10 +43,10 @@ header{
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    /* background-color:rgb(65, 61, 61); */
     padding: 10px;
     border-radius: 10px;
     width: 70%;
+    color: var(--cor-texto-principal);
 }
 
 .form-label label {
@@ -60,7 +56,7 @@ header{
 
 .form-label input {
     padding: 8px;
-    border: 1px solid black;
+    border: 1px solid var(--cor-borda-input);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -68,28 +64,22 @@ header{
 
 /* botoes */
 .btn-cadastrar {
-    padding: 10px 15px;
-    background-color: #28a745; 
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    background-color: var(--cor-fundo-botao); 
+    color: var(--cor-texto-botao);
+} 
 
 .btn-voltar{
-    padding: 8px 16px;
-    background-color: red;
-    color: #000;
-    text-decoration: none;
-    border-radius: 4px;
+    background-color: var(--cor-fundo-botao-voltar);
+    color: var(--cor-texto-botao-voltar);
 }
 
 button:hover {
-    background-color:#23af43;
+    background-color:var(--cor-fundo-botao-hover);
+    color: var(--cor-texto-botao-hover);
 }
 
 .botoes{
     display: flex;
     gap: 10px;
-}
+} 
 /* fim */

@@ -1,0 +1,39 @@
+.btn,
+.botoes,
+.btn-backup {
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    color: var(--cor-texto-botao);
+    transition: background 0.2s;
+}
+
+.btn-logout {
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-cadastrar {
+    padding: 10px 15px;
+    background-color: var(--cor-fundo-botao);
+    color: var(--cor-texto-botao);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-voltar {
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+    background-color:var(--cor-fundo-botao-voltar);
+    color: var(--cor-texto-botao);
+}
+
+
