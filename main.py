@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return RedirectResponse(url="/html/")
+    return RedirectResponse(url="/html/dashboard")
 
 from router.clients_routes import clients_router
 from router.service_route import service_router
