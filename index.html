@@ -34,7 +34,7 @@
 
             <h2>Login</h2>
 
-            <form action="dashboard.html" method="post" class="login-form">
+            <form id="login-form" class="login-form">
 
                 <div class="div-form">
                     <label class="label-group" for="username">Usuário:</label>
@@ -57,6 +57,32 @@
         </section>
 
     </main>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.querySelector('.error-message');
+
+            errorMessage.style.display = 'none';
+
+            try {
+                const response = await fetch(`/usuario/?name=${encodeURIComponent(username)}&email=&password=${encodeURIComponent(password)}`, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    window.location.href = '/html/dashboard';
+                } else {
+                    errorMessage.style.display = 'block';
+                }
+            } catch (error) {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
 
 </body>
 
