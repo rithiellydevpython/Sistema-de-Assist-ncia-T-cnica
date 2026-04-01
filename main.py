@@ -1,6 +1,11 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
+
+@app.get("/")
+def root():
+    return RedirectResponse(url="/html/")
 
 from router.clients_routes import clients_router
 from router.service_route import service_router
