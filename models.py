@@ -74,8 +74,8 @@ class Service(Base):
         self.value = value
         self.status = status
         
-class User(Base):
-    __tablename__ = "users"
+class Usuario(Base):
+    __tablename__ = "usuarios"
     
     id = Column("id", Integer, primary_key = True, autoincrement = True) 
     name = Column("name", String)

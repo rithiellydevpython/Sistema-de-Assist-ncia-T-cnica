@@ -1,24 +1,25 @@
-let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
-
 const form = document.getElementById("form-cliente");
-const inputNome = document.getElementById("nome-cliente");
-const inputNumero = document.getElementById("numero-cliente");
-const inputEndereco = document.getElementById("endereco-cliente");
-const inputCpf = document.getElementById("cpf-cliente");
-
-form.addEventListener("submit", function (event){
+form.addEventListener("submit", async function(event){
     event.preventDefault();
 
     const cliente = {
-        nome: inputNome.value,
-        numero: inputNumero.value, 
-        endereco: inputEndereco.value,
-        cpf: inputCpf.value
+        nome: document.getElementById("nome-cliente").value,
+        numero: document.getElementById("numero-cliente").value,
+        endereco: document.getElementById("endereco-cliente").value,
+        cpf: document.getElementById("cpf-cliente").value
     };
 
-    clientes.push(cliente);
+    try {
+        const res = await fetch("http://127.0.0.1:8000/clients/", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(cliente)
+        });
 
-    localStorage.setItem("clientes", JSON.stringify(clientes));
-
-    form.reset();
+        const data = await res.json();
+        console.log(data.message, "ID:", data.user_id);
+        form.reset();
+    } catch (err) {
+        console.error("Erro ao cadastrar cliente:", err);
+    }
 });
