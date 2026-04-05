@@ -24,19 +24,17 @@ class Client(Base):
         
 class Device(Base):
     __tablename__ = "devices"
-    
-    id = Column("id", Integer, primary_key = True, autoincrement = True) 
-    code = Column("code", String)
-    marca = Column("marca", String)
-    model = Column("model", String)
-    client_id = Column("client_id", Integer, ForeignKey("clients.id"))
-    
-    def __init__(self, code, marca, model, client_id):
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    code = Column(String)
+    marca = Column(String)
+    modelo = Column(String)  # ⚡ corrigido
+    client_id = Column(Integer, ForeignKey("clients.id"))
+
+    def __init__(self, code, marca, modelo, client_id=None):
         self.code = code
         self.marca = marca
-        self.model = model
+        self.modelo = modelo
         self.client_id = client_id
-        
 
 class Estoque(Base):
     __tablename__ = "estoque"

@@ -1,85 +1,132 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}  
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-header{
-    background-color: var(--cor-cabecalho);
+/* BODY */
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    background-color: var(--cor-fundo-secundario);
     color: var(--cor-texto-principal);
-    padding: 10px;
+    padding: 16px;
     text-align: center;
 }
 
-.container{
+/* CONTAINER CENTRAL */
+.container {
     width: 100%;
-    height: 100%;
+    max-width: 500px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+
+    background-color: var(--cor-fundo-card);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* formulario */
+/* SEÇÃO FORM */
 .form-section {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
+/* FORMULÁRIO */
 .formulario {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+    gap: 15px;
 }
 
+/* GRUPO LABEL + INPUT */
 .form-label {
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
-    width: 70%;
+    width: 100%;
     color: var(--cor-texto-principal);
 }
 
+/* LABEL */
 .form-label label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
+/* INPUT */
 .form-label input {
-    padding: 8px;
-    border: 1px solid var(--cor-borda-input);
-    border-radius: 10px;
-    cursor: pointer;
-}
-/* fim */
+    width: 100%;
+    padding: 10px;
 
-/* botoes */
+    border: 1px solid var(--cor-borda-input);
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+/* EFEITO FOCUS (PROFISSIONAL) */
+.form-label input:focus {
+    outline: none;
+    border: 1px solid #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+
+/* BOTÕES */
+.botoes {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* BOTÕES PADRÃO */
+.botoes button,
+.botoes a {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+/* BOTÃO CADASTRAR */
 .btn-cadastrar {
     background-color: var(--cor-fundo-botao); 
     color: var(--cor-texto-botao);
-} 
+    border: none;
+}
 
-.btn-voltar{
+/* BOTÃO VOLTAR */
+.btn-voltar {
     background-color: var(--cor-fundo-botao-voltar);
     color: var(--cor-texto-botao-voltar);
 }
 
-button:hover {
-    background-color:var(--cor-fundo-botao-hover);
-    color: var(--cor-texto-botao-hover);
+/* HOVER BONITO */
+.botoes button:hover,
+.botoes a:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-.botoes{
-    display: flex;
-    gap: 10px;
-} 
-/* fim */
+/* RESPONSIVO (AGORA SIM FAZ SENTIDO) */
+/* @media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+} */

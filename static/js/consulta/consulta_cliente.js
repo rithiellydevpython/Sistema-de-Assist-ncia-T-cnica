@@ -1,16 +1,30 @@
-const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
-
+// Seleciona o tbody da tabela
 const tbody = document.getElementById("tbody-cliente");
 
-clientes.forEach(function (cliente){
-    const tr = document.createElement("tr");
+// Função para carregar clientes da API
+async function carregarClientes() {
+    try {
+        const res = await fetch("http://127.0.0.1:8000/clients/");
+        const data = await res.json();
 
-    tr.innerHTML = `
-        <td>${cliente.nome}</td>
-        <td>${cliente.numero}</td>
-        <td>${cliente.endereco}</td>
-        <td>${cliente.cpf}</td>
-    `;
+        const clientes = data.users; // 'users' vem da sua rota GET
 
-    tbody.appendChild(tr);
-});
+        tbody.innerHTML = ""; // limpa tabela antes de popular
+
+        clientes.forEach((cliente) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${cliente.name}</td>
+                <td>${cliente.number}</td>
+                <td>${cliente.address}</td>
+                <td>${cliente.cpf}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        console.error("Erro ao carregar clientes:", err);
+    }
+}
+
+// Chama a função quando a página carrega
+document.addEventListener("DOMContentLoaded", carregarClientes);
