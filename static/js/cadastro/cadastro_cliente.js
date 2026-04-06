@@ -37,7 +37,7 @@ form.addEventListener("submit", async function(event) {
         form.reset();
 
         // Redirecionando para dashboard
-        window.location.href = "/html/dashboard/dashboard.html";
+        window.location.href = "/html/dashboard";
 
     } catch (err) {
         console.error("Erro ao cadastrar cliente:", err);

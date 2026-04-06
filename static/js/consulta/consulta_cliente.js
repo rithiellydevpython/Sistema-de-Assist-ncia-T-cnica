@@ -1,13 +1,11 @@
-// Seleciona o tbody da tabela
 const tbody = document.getElementById("tbody-cliente");
 
-// Função para carregar clientes da API
 async function carregarClientes() {
     try {
         const res = await fetch("http://127.0.0.1:8000/clients/");
         const data = await res.json();
 
-        const clientes = data.users; // 'users' vem da sua rota GET
+        const clientes = data.users; 
 
         tbody.innerHTML = ""; // limpa tabela antes de popular
 

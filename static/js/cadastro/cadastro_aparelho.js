@@ -1,51 +1,62 @@
-const tbody = document.getElementById("tbody-aparelho");
+const form = document.getElementById("form-aparelho");
 
-async function carregarAparelhos() {
+let devices = JSON.parse(localStorage.getItem("devices")) || [];
+
+form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const device = {
+        code: document.getElementById("codigo-aparelho").value,
+        marca: document.getElementById("marca-aparelho").value,
+        modelo: document.getElementById("modelo-aparelho").value // 🔹 usar modelo
+    };
+
+    devices.push(device);
+    localStorage.setItem("devices", JSON.stringify(devices));
+
     try {
-        const res = await fetch("http://127.0.0.1:8000/aparelhos/");
-        
-        // Verifica se a resposta foi OK
+        const res = await fetch("http://127.0.0.1:8000/devices/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(device)
+        });
+
         if (!res.ok) {
             throw new Error(`Erro na requisição: ${res.status}`);
         }
 
-        let aparelhos = await res.json();
-
-        // Se não for array, transforma em array
-        if (!Array.isArray(aparelhos)) {
-            // Se for um objeto com chave "devices" ou similar, pega o array interno
-            if (aparelhos.devices && Array.isArray(aparelhos.devices)) {
-                aparelhos = aparelhos.devices;
-            } else {
-                // Caso seja objeto único, transforma em array de um elemento
-                aparelhos = [aparelhos];
-            }
-        }
-
-        // Limpa tbody antes de adicionar novos dados
-        tbody.innerHTML = "";
-
-        // Popula a tabela
-        aparelhos.forEach(aparelho => {
-            const tr = document.createElement("tr");
-
-            tr.innerHTML = `
-                <td>${aparelho.code || "-"}</td>
-                <td>${aparelho.marca || "-"}</td>
-                <td>
-                    <button onclick="editarAparelho('${aparelho.code}')">Editar</button>
-                    <button onclick="deletarAparelho('${aparelho.code}')">Deletar</button>
-                </td>
-            `;
-
-            tbody.appendChild(tr);
-        });
+        alert("Aparelho cadastrado com sucesso!");
+        form.reset();
 
     } catch (error) {
-        console.error("Erro ao carregar aparelhos:", error);
-        tbody.innerHTML = `<tr><td colspan="3">Erro ao carregar aparelhos</td></tr>`;
+        console.error("Erro ao cadastrar aparelho:", error);
     }
-}
+});
 
-// Chamada inicial
-carregarAparelhos();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

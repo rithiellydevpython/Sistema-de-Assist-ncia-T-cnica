@@ -2,61 +2,130 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 import os
 
-router = APIRouter(prefix="/html", tags=["Html"])
+router = APIRouter(prefix="/html", tags=["HTML"])
 
-# Função para renderizar HTML de qualquer pasta
-def render_html_from(path_folder: str, filename: str):
-    # Caminho absoluto do arquivo
-    path = os.path.join(os.path.dirname(__file__), "..", path_folder, filename)
-    path = os.path.abspath(path)  # garante caminho absoluto
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Arquivo não encontrado: {path}")
-    with open(path, "r", encoding="utf-8") as f:
-        content = f.read()
-    return HTMLResponse(content=content)
+# Caminho base do projeto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Função genérica para renderizar HTML
+def render_html(folder: str, filename: str):
+    file_path = os.path.join(BASE_DIR, folder, filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"Arquivo não encontrado: {filename}")
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        return HTMLResponse(content=file.read())
 
 # -------------------------
-# HTML principal e dashboard
+# PÁGINAS PRINCIPAIS
 # -------------------------
 @router.get("/", response_class=HTMLResponse)
 def index():
-    return render_html_from("html", "index.html")
-
+    return render_html("html", "index.html")
 
 @router.get("/dashboard", response_class=HTMLResponse)
 def dashboard():
-    return render_html_from("html", "dashboard.html")
-
+    return render_html("html", "dashboard.html")
 
 # -------------------------
-# Cadastro
+# CADASTROS
 # -------------------------
-@router.get("/cadastro/{arquivo}", response_class=HTMLResponse)
-def cadastro_route(arquivo: str):
-    paginas_validas = [
-        "cadastro_cliente.html",
-        "cadastro_aparelho.html",
-        "cadastro_servico.html",
-        "cadastro_venda.html",
-        "cadastro_estoque.html"
-    ]
-    if arquivo not in paginas_validas:
+@router.get("/cadastro/{pagina}", response_class=HTMLResponse)
+def cadastro(pagina: str):
+
+    # normaliza entrada (aceita plural ou .html)
+    pagina = pagina.replace(".html", "").lower()
+    if pagina == "aparelhos":
+        pagina = "aparelho"  # transforma plural em singular
+
+    paginas_validas = ["cliente", "aparelho", "servico", "venda", "estoque"]
+
+    if pagina not in paginas_validas:
         raise HTTPException(status_code=404, detail="Página de cadastro não encontrada")
-    return render_html_from("cadastro", arquivo)
 
+    return render_html("cadastro", f"cadastro_{pagina}.html")
 
 # -------------------------
-# Consulta
+# CONSULTAS
 # -------------------------
-@router.get("/consulta/{arquivo}", response_class=HTMLResponse)
-def consulta_route(arquivo: str):
-    paginas_validas = [
-        "consulta_cliente.html",
-        "consulta_aparelho.html",
-        "consulta_servico.html",
-        "consulta_venda.html"
-    ]
-    if arquivo not in paginas_validas:
+@router.get("/consulta/{pagina}", response_class=HTMLResponse)
+def consulta(pagina: str):
+
+    # normaliza entrada (aceita plural ou .html)
+    pagina = pagina.replace(".html", "").lower()
+    if pagina == "aparelhos":
+        pagina = "aparelho"  # transforma plural em singular
+
+    paginas_validas = ["cliente", "aparelho", "servico", "venda"]
+
+    if pagina not in paginas_validas:
         raise HTTPException(status_code=404, detail="Página de consulta não encontrada")
-    return render_html_from("consulta", arquivo)
+
+    return render_html("consulta", f"consulta_{pagina}.html")
+
+# from fastapi import APIRouter, HTTPException
+# from fastapi.responses import HTMLResponse
+# import os
+
+# router = APIRouter(prefix="/html", tags=["HTML"])
+
+# # Caminho base do projeto
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# # Função genérica para renderizar HTML
+# def render_html(folder: str, filename: str):
+#     file_path = os.path.join(BASE_DIR, folder, filename)
+
+#     if not os.path.exists(file_path):
+#         raise HTTPException(status_code=404, detail=f"Arquivo não encontrado: {filename}")
+
+#     with open(file_path, "r", encoding="utf-8") as file:
+#         return HTMLResponse(content=file.read())
+
+
+# # -------------------------
+# # PÁGINAS PRINCIPAIS
+# # -------------------------
+# @router.get("/", response_class=HTMLResponse)
+# def index():
+#     return render_html("html", "index.html")
+
+
+# @router.get("/dashboard", response_class=HTMLResponse)
+# def dashboard():
+#     return render_html("html", "dashboard.html")
+
+
+# @router.get("/cadastro/{pagina}", response_class=HTMLResponse)
+# def cadastro(pagina: str):
+
+#     # normaliza entrada (aceita vários formatos)
+#     pagina = pagina.replace(".html", "").replace("cadastro_", "")
+
+#     paginas_validas = [
+#         "cliente",
+#         "aparelho",
+#         "servico",
+#         "venda",
+#         "estoque"
+#     ]
+
+#     if pagina not in paginas_validas:
+#         raise HTTPException(status_code=404, detail="Página de cadastro não encontrada")
+
+#     return render_html("cadastro", f"cadastro_{pagina}.html")
+
+# @router.get("/consulta/{pagina}", response_class=HTMLResponse)
+# def consulta(pagina: str):
+#     paginas_validas = [
+#         "cliente",
+#         "aparelho",
+#         "servico",
+#         "venda"
+#     ]
+
+#     if pagina not in paginas_validas:
+#         raise HTTPException(status_code=404, detail="Página de consulta não encontrada")
+
+#     return render_html("consulta", f"consulta_{pagina}.html")

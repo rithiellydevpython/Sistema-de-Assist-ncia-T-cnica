@@ -2,23 +2,26 @@ const tbody = document.getElementById("tbody-aparelho");
 
 async function carregarAparelhos() {
     try {
-        const res = await fetch("http://127.0.0.1:8000/aparelhos/");
-        const aparelhos = await res.json();
+        const res = await fetch("http://127.0.0.1:8000/devices/");
+        const data = await res.json();  // data = { devices: [...] }
+        const devices = data.devices || [];  // pega só o array
 
-        aparelhos.forEach(function (aparelho) {
-            const tr = document.createElement("tr");
+        tbody.innerHTML = "";
 
-            tr.innerHTML = `
-                <td>${aparelho.codigo}</td>
-                <td>${aparelho.marca}</td>
-                <td>${aparelho.modelo}</td>
+        devices.forEach(device => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${device.code}</td>
+                <td>${device.marca}</td>
+                <td>${device.modelo}</td>
             `;
-
-            tbody.appendChild(tr);
+            tbody.appendChild(row);
         });
-    } catch (err) {
-        console.error("Erro ao carregar aparelhos:", err);
+    } catch (error) {
+        console.error("Erro ao carregar aparelhos:", error);
+        tbody.innerHTML = `<tr><td colspan="3">Erro ao carregar aparelhos</td></tr>`;
     }
 }
 
-carregarAparelhos();
+// Chama a função ao carregar a página
+window.addEventListener("DOMContentLoaded", carregarAparelhos);

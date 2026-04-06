@@ -27,13 +27,13 @@ class Device(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     code = Column(String)
     marca = Column(String)
-    modelo = Column(String)  # ⚡ corrigido
+    model = Column(String)  # ⚡ corrigido
     client_id = Column(Integer, ForeignKey("clients.id"))
 
-    def __init__(self, code, marca, modelo, client_id=None):
+    def __init__(self, code, marca, model, client_id=None):
         self.code = code
         self.marca = marca
-        self.modelo = modelo
+        self.model = model
         self.client_id = client_id
 
 class Estoque(Base):
