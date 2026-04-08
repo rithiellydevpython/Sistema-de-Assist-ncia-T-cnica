@@ -33,6 +33,10 @@ from router.filtro_vendas_routes import filtro_vendas_routes
 from router.os_routes import os_routes
 from router.relatorios import relatorios
 from router.auth_routers import auth_router
+from router.management import router as management
+from router.configuracao import router as configuracao
+from router.logout import router as logout  # 👈 NOVO ROUTER DE LOGOUT
+from router.index import router as index  # 👈 NOVO ROUTER DE LOGIN
 
 # ---------- INCLUSÃO DOS ROUTERS ----------
 app.include_router(clients_router) 
@@ -48,3 +52,9 @@ app.include_router(filtro_vendas_routes)
 app.include_router(os_routes)
 app.include_router(relatorios)  
 app.include_router(auth_router)
+app.include_router(management)  
+app.include_router(configuracao)
+app.include_router(logout)
+app.include_router(index)   
+
+

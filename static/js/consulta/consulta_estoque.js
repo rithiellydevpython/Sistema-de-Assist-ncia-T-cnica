@@ -1,32 +1,32 @@
-const lista = document.getElementById('lista-estoque');
-const estoque = JSON.parse(localStorage.getItem("estoque")) || [];
+// Consulta estoques direto do backend
+async function carregarEstoque() {
+    try {
+        const res = await fetch("http://127.0.0.1:8000/estoque/");
+        if (!res.ok) throw new Error("Erro ao buscar estoque");
 
-function renderizarEstoque() {
-    lista.innerHTML = "";
+        const data = await res.json();
+        const lista = document.getElementById("lista-estoque");
+        lista.innerHTML = "";
 
-    estoque.forEach((item, index) => {
-        const card = document.createElement("div");
-        card.classList.add("card-estoque");
+        const listaEstoque = data.estoque || data; // dependendo do retorno do backend
 
-        card.innerHTML = `
-        <h3>${item.marca} ${item.modelo}</h3>
-        <p><strong>Código:</strong> ${item.codigo}</p>
-        <p>${item.descricao}</p>
-            <div class="acoes">
-                <button class="btn-editar">Editar</button>
-                <button class="btn-excluir" onclick="excluirItem(${index})">Excluir</button>
-            </div>
-        `;
+        listaEstoque.forEach(item => {
+            const card = document.createElement("div");
+            card.classList.add("card-estoque");
 
-        lista.appendChild(card);
+            card.innerHTML = `
+                <h3>${item.marca} ${item.modelo}</h3>
+                <p>Código: ${item.codigo}</p>
+                <p>Descrição: ${item.descricao}</p>
+            `;
 
-    });
+            lista.appendChild(card);
+        });
+
+    } catch (err) {
+        console.error("Erro ao carregar estoque:", err);
+    }
 }
 
-function excluirItem(index) {
-    estoque.splice(index, 1);
-    localStorage.setItem("estoque", JSON.stringify(estoque));
-    renderizarEstoque();
-}
-
-renderizarEstoque();
+// Executa ao abrir a página
+carregarEstoque();
