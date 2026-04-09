@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
+from database import engine, Base
+from models import Estoque
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 

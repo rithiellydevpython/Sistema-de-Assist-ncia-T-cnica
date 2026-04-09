@@ -1,8 +1,4 @@
-//le os dados salvos
-
 const servicos = JSON.parse(localStorage.getItem("servicos")) || [];
-
-//seleciona o tbody
 
 const tbody = document.getElementById("tbody-servico");
 
@@ -20,9 +16,6 @@ servicos.forEach(function (servico) {
 
   tbody.appendChild(tr);
 });
-
-
-//transforma objeto em linha 🧠 Aqui acontece a mágica: cada objeto → uma <tr>, cada propriedade → uma <td>, Tabela reflete o array
 
 
 

@@ -1,32 +1,41 @@
-// Consulta estoques direto do backend
+const lista = document.getElementById("lista-estoque");
+
 async function carregarEstoque() {
     try {
-        const res = await fetch("http://127.0.0.1:8000/estoque/");
-        if (!res.ok) throw new Error("Erro ao buscar estoque");
+        const response = await fetch("http://127.0.0.1:8000/estoque/");
 
-        const data = await res.json();
-        const lista = document.getElementById("lista-estoque");
+        if (!response.ok) {
+            throw new Error("Erro ao buscar estoque");
+        }
+
+        const data = await response.json();
+        console.log("Dados recebidos:", data);
+
+        // suporta dois formatos de resposta
+        const itens = data.estoque || data;
+
         lista.innerHTML = "";
 
-        const listaEstoque = data.estoque || data; // dependendo do retorno do backend
-
-        listaEstoque.forEach(item => {
+        itens.forEach(item => {
             const card = document.createElement("div");
             card.classList.add("card-estoque");
 
             card.innerHTML = `
-                <h3>${item.marca} ${item.modelo}</h3>
-                <p>Código: ${item.codigo}</p>
-                <p>Descrição: ${item.descricao}</p>
+                <h3>${item.marca} ${item.model}</h3>
+                <p><strong>Código:</strong> ${item.code}</p>
+                <p><strong>Descrição:</strong> ${item.description}</p>
             `;
 
             lista.appendChild(card);
         });
 
-    } catch (err) {
-        console.error("Erro ao carregar estoque:", err);
+    } catch (error) {
+        console.error("Erro ao carregar estoque:", error);
+
+        lista.innerHTML = "<p>Erro ao carregar estoque</p>";
     }
 }
 
-// Executa ao abrir a página
+
+// carrega automaticamente ao abrir a página
 carregarEstoque();

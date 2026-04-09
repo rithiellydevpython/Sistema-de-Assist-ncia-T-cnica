@@ -1,8 +1,9 @@
-from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
+# from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import DateTime
-
-db = create_engine("sqlite:///banco.db")
+from sqlalchemy import Column, String, Integer, Boolean, Float, ForeignKey
+from database import Base 
+# db = create_engine("sqlite:///banco.db")
 
 Base = declarative_base()
 
@@ -46,7 +47,7 @@ class Estoque(Base):
     description = Column("description", String)
     device_id = Column(Integer, ForeignKey("devices.id"))
     
-    def __init__(self, marca, model, code, description, device_id):
+    def __init__(self, marca, model, code, description, device_id=None):        
         self.marca = marca
         self.model = model
         self.code = code
@@ -118,3 +119,24 @@ class employee(Base):
     name = Column("name", String)
     wage = Column("wage", Float)
     payment = ("payment", String)
+    
+    
+class Venda(Base):
+    __tablename__ = "vendas"
+    
+    id = Column("id", Integer, primary_key = True, autoincrement = True) 
+    model = Column("model", String)
+    description = Column("description", String)
+    client_id = Column("client_id", Integer, ForeignKey("clients.id"))
+    date = Column("date", DateTime)
+    value = Column("value", Float)
+    status = Column("status", String)
+    
+    def __init__(self, model, description, client_id, date, value, status):
+        self.model = model
+        self.description = description
+        self.client_id = client_id
+        self.date = date
+        self.value = value
+        self.status = status
+        
