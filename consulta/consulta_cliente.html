@@ -15,15 +15,12 @@
     <main>
 
         <section class="search-section">
-            <label class="search-label" for="searchInput">Pesquisar Aparelhos: </label>
-            <input id="searchInput">
+            <label class="search-label" for="searchInput">Pesquisar cliente </label>
+
+            <input id="searchInput" placeholder="Digite o nome do cliente">
         </section>
 
         <section class="table-section">
-
-            <div class="topo-acoes">
-                <a href="/html/dashboard" class="btn-voltar">← Voltar</a>
-            </div>
 
             <table id="tabela-cliente" class="tableclass">
                 <caption class="caption-table">Clientes</caption>
@@ -40,7 +37,9 @@
 
                 </tbody>
             </table>
-
+            <div class="topo-acoes">
+                <a href="/html/dashboard" class="btn-voltar">← Voltar</a>
+            </div>
         </section>
     </main>
     <script src="/static/js/consulta/consulta_cliente.js"> </script>

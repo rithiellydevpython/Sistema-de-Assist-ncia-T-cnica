@@ -22,6 +22,13 @@
             <form class="formulario" id="form-servico">
 
                 <div class="form-label">
+                    <label class="label" for="cliente-servico"> cliente: </label>
+                    <input type="text" id="cliente-servico" name="cliente" required>
+                </div>
+
+                <!-- adcionar cpf ja que e a primary key do cliente -->
+
+                <div class="form-label">
                     <label class="label" for="modelo-servico"> Modelo: </label>
                     <input type="text" id="modelo-servico" name="modelo" required>
                 </div>
@@ -29,11 +36,6 @@
                 <div class="form-label">
                     <label class="label" for="servico-realizado"> Serviço realizado </label>
                     <input type="text" id="servico-realizado" name="servico" required>
-                </div>
-
-                <div class="form-label">
-                    <label class="label" for="cliente-servico"> cliente: </label>
-                    <input type="text" id="cliente-servico" name="cliente" required>
                 </div>
 
                 <div class="form-label">
@@ -65,5 +67,5 @@
         </section>
         <script src="/static/js/cadastro/cadastro_servico.js"></script>
     </div>
-   
+
 </body>

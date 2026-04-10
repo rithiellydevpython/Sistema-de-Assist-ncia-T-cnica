@@ -1,25 +1,33 @@
-let vendas = JSON.parse(localStorage.getItem("vendas")) || [];
-
-
 const form = document.getElementById("form-venda");
-const inputMarca = document.getElementById("marca-venda");
-const inputModelo = document.getElementById("modelo-venda");
-const inputValor = document.getElementById("valor-venda");
-const inputData = document.getElementById("data-venda");
 
-form.addEventListener("submit", function (event){
-    event.preventDefault();
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    const venda = {
-        marca: inputMarca.value,
-        modelo: inputModelo.value, 
-        valor: inputValor.value,
-        data: inputData.value
+    const dados = {
+        model: document.getElementById("model").value,
+        description: document.getElementById("description").value,
+        client_id: parseInt(document.getElementById("client_id").value),
+        date: document.getElementById("date").value,
+        value: parseFloat(document.getElementById("value").value),
+        status: document.getElementById("status").value
     };
 
-    vendas.push(venda);
+    try {
+        const res = await fetch("http://127.0.0.1:8000/vendas/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dados)
+        });
 
-    localStorage.setItem("vendas", JSON.stringify(vendas));
+        const result = await res.json();
+        console.log(result);
 
-    form.reset();
+        alert("Venda cadastrada com sucesso!");
+
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao cadastrar venda");
+    }
 });

@@ -72,17 +72,13 @@ def estoque():
 def relatorios():
     return render_html("html", "relatorios.html")
 
-@router.get("/configuracoes", response_class=HTMLResponse)
+@router.get("/configuracao", response_class=HTMLResponse)
 def configuracoes():
-    return render_html("html", "configuracoes.html")    
+    return render_html("html", "configuracao.html")    
 
 @router.get("/gerencia", response_class=HTMLResponse)
 def management():
     return render_html("html", "gerencia.html")   
-
-@router.get("/configuracao", response_class=HTMLResponse)
-def configuracao():
-    return render_html("html", "configuracao.html")
 
 @router.get("/logout", response_class=HTMLResponse)
 def logout():
@@ -91,3 +87,9 @@ def logout():
 @router.get("/index", response_class=HTMLResponse)
 def login():
     return render_html("html", "index.html")
+
+@router.get("/vendas", response_class=HTMLResponse)
+def vendas():
+    return render_html("html", "vendas.html")
+
+    
