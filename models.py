@@ -3,6 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import DateTime
 from sqlalchemy import Column, String, Integer, Boolean, Float, ForeignKey
 from database import Base 
+from sqlalchemy.orm import relationship
 # db = create_engine("sqlite:///banco.db")
 
 Base = declarative_base()
@@ -73,52 +74,48 @@ class Service(Base):
         self.value = value
         self.status = status
         
-class Usuario(Base):
-    __tablename__ = "usuarios"
+class Compras(Base):
+    __tablename__ = "compras"
     
     id = Column("id", Integer, primary_key = True, autoincrement = True) 
-    name = Column("name", String)
-    email = Column("email", String)
-    password = Column("password", String)
+    produto = Column("produto", String)
+    valor = Column("valor", Integer)
+    quantidade = Column("quantidade", Integer)
+    data = Column("data", String)
     
-    def __init__(self, name, email, password):
-        self.name= name
-        self.email = email
-        self.password = password
+    def __init__(self, produto, valor, quantidade, data):
+        self.produto = produto
+        self.valor = valor
+        self.quantidade = quantidade
+        self.data = data
         
-class Purchase(Base):
-    __tablename__ = "purchases"
     
-    id = Column("id", Integer, primary_key = True, autoincrement = True) 
-    value = Column("value", Float)
-    valueUni = Column("valueUni", Float)
-    paymentform = Column("paymentform", String)
+class Despesa(Base):   
+    __tablename__ = "despesas" 
     
-    def __init__(self, value, valueUni, paymentform):
-        self.value = value
-        self.valueUnit = valueUni
-        self.paymentform = paymentform
+    id = Column("id", Integer, primary_key = True, autoincrement = True)    
+    nome = Column("nome", String)
+    valor = Column("valor", Float)
+    pagamento = Column("pagamento", String)
+
+    def __init__(self, nome, valor, pagamento):
+        self.nome = nome
+        self.valor = valor
+        self.pagamento = pagamento
         
-class Expense(Base):
-    __tablename__ = "expenses"
-    
-    id = Column("id", Integer, primary_key = True, autoincrement = True) 
-    reason = Column("reason", String)
-    value = Column("value", Float)
-    payment = Column("payment", String)
-    
-    def __init__(self, reason, value, payment):
-        self.reason = reason
-        self.value = value
-        self.payment = payment
         
-class employee(Base):
-    __tablename__ = "employees"
+class Funcionario(Base):
+    __tablename__ = "funcionarios"
     
     id = Column("id", Integer, primary_key = True, autoincrement = True)
-    name = Column("name", String)
-    wage = Column("wage", Float)
-    payment = ("payment", String)
+    nome = Column("nome", String)
+    cargo = Column("cargo", String)
+    salario = Column("salario", Float)
+    
+    def __init__(self, nome, cargo, salario):
+        self.nome = nome
+        self.cargo = cargo
+        self.salario = salario
     
     
 class Venda(Base):
@@ -140,3 +137,36 @@ class Venda(Base):
         self.value = value
         self.status = status
         
+# configuração
+
+class Usuario(Base):
+    __tablename__ = "usuarios"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nome = Column(String, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    senha = Column(String, nullable=False)
+    tipo_acesso = Column(String, default="comum")  # admin, comum, etc
+
+    # relacionamento com preferências
+    preferencias = relationship("Preferencia", back_populates="usuario", uselist=False)
+
+
+class Preferencia(Base):
+    __tablename__ = "preferencias"
+
+    id = Column(Integer, primary_key=True, index=True)
+    tema = Column(String, default="claro")
+    notificacoes = Column(Boolean, default=True)
+
+    usuario_id = Column(Integer, ForeignKey("usuarios.id"))
+
+    usuario = relationship("Usuario", back_populates="preferencias")
+
+
+class Backup(Base):
+    __tablename__ = "backups"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nome_arquivo = Column(String)
+    data_criacao = Column(String)

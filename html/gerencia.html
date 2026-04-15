@@ -5,102 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerencia</title>
-    <link rel="stylesheet" href="/static/css/global.css">
     <link rel="stylesheet" href="/static/css/gerencia.css">
-    <link rel="stylesheet" href="/static/css/botoes.css">
-    <!-- ver pq nao funciona -->
 </head>
 
 <body>
-
     <header>
-        <h2>Seja bem vindo <!--nome da pessoa cadastrada--></h2>
-        <div>
-            <ul>
-                <li a href="#Compras">Compras</li>
-                <li a href="#saidas">contas</li>    
-                <li a href="#funcionarios">Funcionários</li>
-            </ul>
-        </div>
+        <nav>
+
+        </nav>
     </header>
 
-    <main>
-        <section class="form-section" id="Compras"> <!--purchase-->
+    <section class="financeiro">
 
-            <form class="formulario" id="form-compras">
+        <h3>Despesas</h3>
 
-                <div class="form-label">
-                    <label for="valor-compra"> Valor total da compra </label>
-                    <input type="number" id="valor-compra" name="valor">
-                </div>
+        <form id="form-despesas">
+            <label for="nome_despesa">Nome:</label>
+            <input type="text" id="nome_despesa" name="nome">
 
-                <div class="form-label">
-                    <label for="valor-unitario"> Valor unitario da compra </label>
-                    <input type="number" id="valor-unitario" name="valor-unitario">
-                </div>
+            <label for="valor_despesa">Valor:</label>
+            <input type="number" id="valor_despesa" name="valor">
 
-                <div class="form-label">
-                    <label for="motivo"> Motivo da compra </label>
-                    <input type="text" id="motivo" name="motivo">
-                </div>
-                <div class="btn" id="form-buttons-compras">
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
+            <label for="pagamento_despesa">Forma de pagamento</label>
+            <input type="text" id="pagamento_despesa" name="pagamento">
 
-        </section>
-        <section class="form-section" id="saidas">
+            <button type="submit">Adicionar</button>
 
-            <form class="formulario" id="form-saidas">
-                <div class="form-label">
-                    <label for="pagamento"> Motivo do pagamento </label>
-                    <input type="text" id="pagamento" name="pagamento">
-                </div>
+        </form>
 
-                <div class="form-label">
-                    <label for="valor-pagamento"> Valor do pagamento </label>
-                    <input type="number" id="valor-pagamento" name="valor-pagamento">
-                </div>
+        <h3>Compras</h3>
 
-                <div class="form-label">
-                    <label for="metodo-pagamento"> Forma de pagamento </label>
-                    <input type="text" id="metodo-pagamento" name="metodo-pagamento">
-                </div>
+        <form id="form-compras">
 
-                <div class="btn" id="form-buttons-saidas">
-                    <button type="submit">Cadastrar</button>
-                </div>
+            <label for="compras_produtos">Produto:</label>
+            <input type="text" id="compras_produtos" name="compras_produtos">
 
-            </form>
+            <label for="valor_compras">Valor:</label>
+            <input type="number" id="valor_compras" name="valor_compras">
 
-        </section>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade">
 
-        <section class="form-section" id="funcionarios">
-            <form class="formulario" id="form-funcionarios">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
 
-                <div class="form-label">
-                    <label for="funcionario"> Funcionario </label>
-                    <input type="text" id="funcionario" name="funcionario">
-                </div>
+            <button type="submit">Adicionar</button>
 
-                <div class="form-label">
-                    <label for="salario"> Valor do salario </label>
-                    <input type="number" id="salario" name="salario">
-                </div>
+        </form>
 
-                <div class="form-label">
-                    <label for="metodo-pagamento-salario"> Forma de pagamento </label>
-                    <input type="text" id="metodo-pagamento-salario" name="metodo-pagamento-salario">
-                </div>
+        <h3>Funcionarios</h3>
 
-                <div class="btn" id="form-button-funcionarios">
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
+        <form id="form_funcionarios">
 
-        </section>
-    </main>
-    <script src="./static/js/gerencia.js"></script>
+            <label for="funcionarios">Nome:</label>
+            <input type="text" id="funcionarios" name="funcionarios">
+
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo">
+
+            <label for="salario">Salário:</label>
+            <input type="number" id="salario" name="salario">
+
+            <button type="submit">Adicionar</button>
+
+        </form>
+    </section>
+    <br>
+    <br>
+    <section class="dados">
+
+        <h3>Despesas</h3>
+        <div id="lista-despesas" class="cards-container"></div>
+
+    </section>
+
+    <section class="dados">
+
+        <h3>Compras</h3>
+        <div id="lista-compras" class="cards-container"></div>
+
+    </section>
+
+    <section class="dados">
+
+        <h3>Funcionarios</h3>
+        <div id="lista-funcionarios" class="cards-container"></div>
+
+    </section>
+
+    <script src="/static/js/gerencia/gerencia.js" defer></script>
+    
 </body>
 
 </html>

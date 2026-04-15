@@ -1,0 +1,8 @@
+somente para nao me perder nas rotas 
+
+management - rota que vai conter os dados da pagina de gerencia
+|-ja esta no route
+|-css esta vazio 
+|-
+
+
