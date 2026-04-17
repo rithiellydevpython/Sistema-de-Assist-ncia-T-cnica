@@ -3,16 +3,23 @@ const form = document.getElementById("form-cliente");
 // Pegando dados do LocalStorage
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
-form.addEventListener("submit", async function(event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     // Criando objeto com os dados do formulário
     const cliente = {
-        nome: document.getElementById("nome-cliente").value,
-        numero: document.getElementById("numero-cliente").value,
-        endereco: document.getElementById("endereco-cliente").value,
+        name: document.getElementById("nome-cliente").value,
+        number: document.getElementById("numero-cliente").value,
+        address: document.getElementById("endereco-cliente").value,
         cpf: document.getElementById("cpf-cliente").value
     };
+
+    // const cliente = {
+    //     name: document.getElementById("nome").value,
+    //     number: document.getElementById("numero").value,
+    //     address: document.getElementById("endereco").value,
+    //     cpf: document.getElementById("cpf").value
+    // };
 
     // Salvando no LocalStorage
     clientes.push(cliente);
@@ -27,8 +34,11 @@ form.addEventListener("submit", async function(event) {
         });
 
         if (!res.ok) {
+            const erro = await res.json();
+            console.log("Erro detalhado completo:", JSON.stringify(erro, null, 2));
             throw new Error("Erro na API ao cadastrar cliente");
         }
+
 
         const data = await res.json();
         console.log("Cadastrado com sucesso! ID:", data.user_id);
