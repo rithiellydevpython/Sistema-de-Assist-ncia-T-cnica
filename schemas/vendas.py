@@ -1,12 +1,11 @@
 from pydantic import BaseModel
+from datetime import date
 
 class VendaCreate(BaseModel):
     model: str
-    description: str
-    client_id: int
-    date: str
+    date: date
     value: float
-    status: str
+    marca: str
     
     
     

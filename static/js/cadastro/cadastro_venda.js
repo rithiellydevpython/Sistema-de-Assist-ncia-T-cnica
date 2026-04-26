@@ -4,15 +4,18 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const dados = {
-        model: document.getElementById("model").value,
-        description: document.getElementById("description").value,
-        client_id: parseInt(document.getElementById("client_id").value),
-        date: document.getElementById("date").value,
-        value: parseFloat(document.getElementById("value").value),
-        status: document.getElementById("status").value
+        model: document.getElementById("modelo-venda").value,
+        date: document.getElementById("data-venda").value,
+        value: parseFloat(document.getElementById("valor-venda").value),
+        marca: document.getElementById("marca-venda").value
     };
 
-    try {
+    console.log(dados);
+
+    console.log(typeof dados.date, dados.date);
+
+
+    try {    
         const res = await fetch("http://127.0.0.1:8000/vendas/", {
             method: "POST",
             headers: {

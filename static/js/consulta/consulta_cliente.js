@@ -1,103 +1,104 @@
-const API = "http://127.0.0.1:8000/clients";
+const API = "http://127.0.0.1:8000/servicos";
 
-window.onload = carregarClientes;
+const tbody = document.getElementById("tbody-servico");
 
-async function carregarClientes() {
-    try {
-        const res = await fetch(API);
+window.onload = carregarServicos;
 
-        if (!res.ok) {
-            throw new Error("Erro ao buscar clientes");
-        }
+// 🔎 LISTAR SERVIÇOS
+async function carregarServicos() {
+  try {
+    const res = await fetch(API);
 
-        const data = await res.json();
-        const clientes = data.clientes || [];
-
-        const tbody = document.getElementById("tbody-cliente");
-
-        tbody.innerHTML = "";
-
-        if (!clientes.length) {
-            tbody.innerHTML = `<tr><td colspan="5">Nenhum cliente encontrado</td></tr>`;
-            return;
-        }
-
-        clientes.forEach((cliente) => {
-            const tr = document.createElement("tr");
-
-            tr.innerHTML = `
-                <td>${cliente.name}</td>
-                <td>${cliente.number}</td>
-                <td>${cliente.address}</td>
-                <td>${cliente.cpf}</td>
-                <td>
-                    <button onclick="editar('${cliente.cpf}')">Editar</button>
-                    <button onclick="deletar('${cliente.cpf}')">Deletar</button>
-                </td>
-            `;
-
-            tbody.appendChild(tr);
-        });
-
-    } catch (err) {
-        console.error("Erro ao carregar clientes:", err);
-
-        const tbody = document.getElementById("tbody-cliente");
-        tbody.innerHTML = `<tr><td colspan="5">Erro ao carregar clientes</td></tr>`;
+    if (!res.ok) {
+      throw new Error("Erro ao buscar serviços");
     }
+
+    const servicos = await res.json();
+
+    tbody.innerHTML = "";
+
+    if (!servicos.length) {
+      tbody.innerHTML = `<tr><td colspan="7">Nenhum serviço encontrado</td></tr>`;
+      return;
+    }
+
+    servicos.forEach(servico => {
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+        <td>${servico.modelo}</td>
+        <td>${servico.servico}</td>
+        <td>${servico.cliente}</td>
+        <td>${servico.data}</td>
+        <td>R$ ${servico.valor}</td>
+        <td>${servico.status}</td>
+        <td>
+          <button onclick="editar('${servico.id}')">Editar</button>
+          <button onclick="deletar('${servico.id}')">Deletar</button>
+        </td>
+      `;
+
+      tbody.appendChild(tr);
+    });
+
+  } catch (error) {
+    console.error(error);
+    tbody.innerHTML = `<tr><td colspan="7">Erro ao carregar serviços</td></tr>`;
+  }
 }
 
-async function editar(cpf){
-    const novoNumero = prompt("novo numero de telefone: ");
-    const novoEndereco = prompt("Novo endereço: ");
+// ✏️ EDITAR (SEM DATA)
+async function editar(id) {
 
-    if (!novoNumero || !novoEndereco) return;
+  const novoModelo = prompt("Novo modelo:");
+  const novoServico = prompt("Novo serviço:");
+  const novoValor = parseFloat(prompt("Novo valor:"));
+  const novoStatus = prompt("Novo status:");
 
-    try {
-        const res = await fetch(`${API}/${cpf}`, {
-            method: "PUT",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                number: novoNumero,
-                address: novoEndereco
-            })
-        });
+  if (!novoModelo || !novoServico || isNaN(novoValor) || !novoStatus) return;
 
-        if (!res.ok) {
-            throw new Error("Erro ao atualizar cliente");
-        }
+  try {
+    const res = await fetch(`${API}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        modelo: novoModelo,
+        servico: novoServico,
+        valor: novoValor,
+        status: novoStatus
+      })
+    });
 
-        carregarClientes()
-
-    } catch (error) {
-        console.error(error);
-        alert("Erro ao atualizar cliente");
+    if (!res.ok) {
+      throw new Error("Erro ao atualizar serviço");
     }
+
+    carregarServicos();
+
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao atualizar serviço");
+  }
 }
 
-async function deletar(cpf) {
-    const confirmar = confirm("Tem certeza que deseja deletar este cliente?");
+// 🗑️ DELETAR
+async function deletar(id) {
 
-    if (!confirmar) return;
+  if (!confirm("Deseja deletar este serviço?")) return;
 
-    try {
-        const res = await fetch(`${API}/${cpf}`, {
-            method: "DELETE"
-        });
+  try {
+    const res = await fetch(`${API}/${id}`, {
+      method: "DELETE"
+    });
 
-        if (!res.ok) {
-            const erro = await res.json();
-            console.error("Erro ao deletar:", erro);
-            throw new Error("Erro ao deletar cliente");
-        }
-
-        alert("Cliente deletado com sucesso!");
-
-        // 🔄 recarrega a tabela
-        carregarClientes();
-
-    } catch (error) {
-        console.error(error);
-        alert("Erro ao deletar cliente");
+    if (!res.ok) {
+      throw new Error("Erro ao deletar serviço");
     }
+
+    carregarServicos();
+
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao deletar serviço");
+  }
 }

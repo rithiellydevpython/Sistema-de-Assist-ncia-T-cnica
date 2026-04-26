@@ -2,14 +2,24 @@ from fastapi import APIRouter, HTTPException
 from database import SessionLocal
 from models import Venda
 from schemas.vendas import VendaCreate
+from datetime import datetime
+from dependencies import pegar_sessao
 
 vendas_router = APIRouter(prefix="/vendas", tags=["vendas"])
 
+from fastapi import HTTPException, Depends
+from sqlalchemy.orm import Session
+from datetime import datetime
+
 @vendas_router.post("/")
-async def create_venda(venda: VendaCreate):
-    db = SessionLocal()
+async def create_venda(venda: VendaCreate, db: Session = Depends(pegar_sessao)):
     try:
-        new_venda = Venda(**venda.dict())
+        new_venda = Venda(
+            model=venda.model,
+            marca=venda.marca,
+            value=venda.value,
+            date=venda.date
+        )
 
         db.add(new_venda)
         db.commit()
@@ -23,10 +33,6 @@ async def create_venda(venda: VendaCreate):
     except Exception as e:
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
-
-    finally:
-        db.close()
-
 
 @vendas_router.get("/")
 async def listar_vendas():

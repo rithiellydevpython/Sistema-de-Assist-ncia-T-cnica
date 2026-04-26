@@ -22,8 +22,10 @@
             <form class="formulario" id="form-servico">
 
                 <div class="form-label">
-                    <label class="label" for="cliente-servico"> cliente: </label>
-                    <input type="text" id="cliente-servico" name="cliente" required>
+                    <label class="label" for="cliente-servico">Cliente:</label>
+                    <select id="cliente-servico" name="cliente" required>
+                        <option value="">Selecione um cliente</option>
+                    </select>
                 </div>
 
                 <!-- adcionar cpf ja que e a primary key do cliente -->
@@ -40,7 +42,7 @@
 
                 <div class="form-label">
                     <label class="label" for="data-servico">Data de entrega: </label>
-                    <input type="data" id="data-servico" name="data" required>
+                    <input type="date" id="data-servico" name="data" required>
                 </div>
 
                 <div class="form-label">

@@ -1,5 +1,6 @@
 # from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
 from sqlalchemy.orm import declarative_base
+from sqlalchemy import Date
 from sqlalchemy import DateTime
 from sqlalchemy import Column, String, Integer, Boolean, Float, ForeignKey
 from database import Base 
@@ -117,26 +118,24 @@ class Funcionario(Base):
         self.cargo = cargo
         self.salario = salario
     
-    
 class Venda(Base):
     __tablename__ = "vendas"
     
     id = Column("id", Integer, primary_key = True, autoincrement = True) 
     model = Column("model", String)
-    description = Column("description", String)
-    client_id = Column("client_id", Integer, ForeignKey("clients.id"))
-    date = Column("date", DateTime)
+    # client_id = Column("client_id", Integer, ForeignKey("clients.id"))
+    date = Column("date", Date)
     value = Column("value", Float)
-    status = Column("status", String)
+    marca = Column("marca", String)
+    # status = Column("status", String)
     
-    def __init__(self, model, description, client_id, date, value, status):
+    def __init__(self, model, date, value, marca):
         self.model = model
-        self.description = description
-        self.client_id = client_id
+        # self.client_id = client_id
         self.date = date
         self.value = value
-        self.status = status
-        
+        self.marca = marca
+                
 # configuração
 
 class Usuario(Base):
