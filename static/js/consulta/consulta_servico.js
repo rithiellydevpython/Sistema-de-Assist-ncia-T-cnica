@@ -1,5 +1,3 @@
-console.log("JS consulta carregou");
-
 const API = "http://127.0.0.1:8000/services";
 const API_CLIENTES = "http://127.0.0.1:8000/clients";
 
@@ -21,6 +19,7 @@ async function carregarClientes() {
     mapaClientes = {}; // limpa antes
 
     clientes.forEach(cliente => {
+      console.log(cliente);
       mapaClientes[cliente.id] = `${cliente.name} - ${cliente.cpf}`;
     });
 
@@ -111,11 +110,12 @@ async function editar(id, servicoAtual) {
   }
 }
 
-
+    
 // ❌ DELETAR
 async function deletar(id) {
 
-  if (!confirm("Deseja deletar este serviço?")) return;
+  const confirmacao = confirm("Deseja deletar este serviço?");
+  if (!confirmacao) return;
 
   try {
     const res = await fetch(`${API}/${id}`, {
@@ -131,7 +131,6 @@ async function deletar(id) {
     alert("Erro ao deletar serviço");
   }
 }
-
 
 // 🚀 iniciar
 window.onload = carregarServicos;

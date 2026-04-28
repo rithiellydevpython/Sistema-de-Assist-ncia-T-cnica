@@ -1,40 +1,41 @@
-const API = "http://127.0.0.1:8000/servicos";
+const API = "http://127.0.0.1:8000/clients";
 
-const tbody = document.getElementById("tbody-servico");
+const tbody = document.getElementById("tbody-cliente");
 
-window.onload = carregarServicos;
+window.onload = carregarClientes;
 
-// 🔎 LISTAR SERVIÇOS
-async function carregarServicos() {
+// 🔎 LISTAR CLIENTES
+async function carregarClientes() {
+
   try {
     const res = await fetch(API);
 
     if (!res.ok) {
-      throw new Error("Erro ao buscar serviços");
+      throw new Error("Erro ao buscar clientes");
     }
 
-    const servicos = await res.json();
+    const data = await res.json();
+
+    const clients = data.clientes; //importantissimo usar isso 
 
     tbody.innerHTML = "";
 
-    if (!servicos.length) {
-      tbody.innerHTML = `<tr><td colspan="7">Nenhum serviço encontrado</td></tr>`;
+    if (!clients.length) {
+      tbody.innerHTML = `<tr><td colspan="4">Nenhum cliente encontrado</td></tr>`;
       return;
     }
 
-    servicos.forEach(servico => {
+    clients.forEach(client => {
       const tr = document.createElement("tr");
 
       tr.innerHTML = `
-        <td>${servico.modelo}</td>
-        <td>${servico.servico}</td>
-        <td>${servico.cliente}</td>
-        <td>${servico.data}</td>
-        <td>R$ ${servico.valor}</td>
-        <td>${servico.status}</td>
+        <td>${client.name}</td>
+        <td>${client.number}</td>
+        <td>${client.address}</td>
+        <td>${client.cpf}</td>
         <td>
-          <button onclick="editar('${servico.id}')">Editar</button>
-          <button onclick="deletar('${servico.id}')">Deletar</button>
+          <button onclick="editarCliente('${client.cpf}')">Editar</button>
+          <button onclick="deletarCliente('${client.cpf}')">Deletar</button>
         </td>
       `;
 
@@ -43,62 +44,63 @@ async function carregarServicos() {
 
   } catch (error) {
     console.error(error);
-    tbody.innerHTML = `<tr><td colspan="7">Erro ao carregar serviços</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4">Erro ao carregar clientes</td></tr>`;
   }
 }
 
-// ✏️ EDITAR (SEM DATA)
-async function editar(id) {
 
-  const novoModelo = prompt("Novo modelo:");
-  const novoServico = prompt("Novo serviço:");
-  const novoValor = parseFloat(prompt("Novo valor:"));
-  const novoStatus = prompt("Novo status:");
+// ✏️ EDITAR CLIENTE
+async function editarCliente(cpf) {
+  const novoNome = prompt("Novo nome:");
+  const novoTelefone = prompt("Novo telefone:");
+  const novoEndereco = prompt("Novo endereço:");
 
-  if (!novoModelo || !novoServico || isNaN(novoValor) || !novoStatus) return;
+  if (!novoNome || !novoTelefone || !novoEndereco) return;
 
   try {
-    const res = await fetch(`${API}/${id}`, {
+    const res = await fetch(`${API}/${cpf}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        modelo: novoModelo,
-        servico: novoServico,
-        valor: novoValor,
-        status: novoStatus
+        name: novoNome,
+        number: novoTelefone,
+        address: novoEndereco 
       })
     });
 
     if (!res.ok) {
-      throw new Error("Erro ao atualizar serviço");
+      throw new Error("Erro ao atualizar cliente");
     }
 
-    carregarServicos();
+    carregarClientes();
 
   } catch (error) {
     console.error(error);
-    alert("Erro ao atualizar serviço");
+    alert("Erro ao atualizar cliente");
   }
 }
 
-// 🗑️ DELETAR
-async function deletar(id) {
 
-  if (!confirm("Deseja deletar este serviço?")) return;
+// 🗑️ DELETAR CLIENTE
+async function deletarCliente(cpf) {
+
+  if (!confirm("Deseja deletar este cliente?")) return;
 
   try {
-    const res = await fetch(`${API}/${id}`, {
+    const res = await fetch(`${API}/${cpf}`, {
       method: "DELETE"
     });
 
     if (!res.ok) {
-      throw new Error("Erro ao deletar serviço");
+      throw new Error("Erro ao deletar cliente");
     }
 
-    carregarServicos();
+    carregarClientes();
 
   } catch (error) {
     console.error(error);
-    alert("Erro ao deletar serviço");
+    alert("Erro ao deletar cliente");
   }
 }
+
+

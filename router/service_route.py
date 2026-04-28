@@ -1,8 +1,11 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from requests import Session
 from database import SessionLocal
+from dependencies import pegar_sessao
 from models import Service
 from schemas.servico import ServiceSchema 
 from schemas.servico import ServiceUpdateSchema
+from dependencies import pegar_sessao
 
 
 service_router = APIRouter( prefix="/services", tags=["Serviço"] )
@@ -89,3 +92,18 @@ async def update_service(id: int, servico: ServiceUpdateSchema):
         db.close()
         
 
+@service_router.delete("/{id}")
+async def delete_service(id: int, db: Session = Depends(pegar_sessao)):
+
+    
+        service = db.query(Service).filter(Service.id == id).first()
+
+        if not service:
+            raise HTTPException(status_code=404, detail="Serviço não encontrado")
+
+        db.delete(service)
+        db.commit()
+        
+        return {"message": "Serviço deletado com sucesso"}
+
+        

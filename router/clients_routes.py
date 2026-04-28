@@ -56,6 +56,7 @@ def atualiza_cliente(cpf: str, dados: ClienteUpdate, db: Session = Depends(pegar
 
     cliente.number = dados.number
     cliente.address = dados.address
+    cliente.name = dados.name
     
     db.commit()
     db.refresh(cliente)

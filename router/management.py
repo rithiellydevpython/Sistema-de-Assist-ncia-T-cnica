@@ -1,25 +1,23 @@
+# from fastapi.encoders import jsonable_encoder
 from models import Compras, Funcionario, Despesa
-from fastapi import APIRouter
-from database import SessionLocal
-from schemas.gerencia import FuncionarioCreate
-from schemas.gerencia import CriarDespesas
-from schemas.gerencia import CriarCompra
-from schemas.compras import CompraSchema 
-from schemas.despesa import DespesaSchema
-from schemas.funcionarios import FuncionarioSchema
-from fastapi.encoders import jsonable_encoder
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+from router.html_route import management
+from schemas.gerencia import CriarDespesas, DespesaSchema, CompraSchema, FuncionarioSchema
+from dependencies import pegar_sessao
+from fastapi import APIRouter, HTTPException, Depends
+from typing import List
+
 
 router = APIRouter(prefix="/management", tags=["Management"])
     
 @router.post("/funcionarios")
-async def criar_funcionario(funcionario: FuncionarioCreate):
-    db = SessionLocal()
+async def criar_funcionario(dados: FuncionarioSchema, db: Session = Depends(pegar_sessao)):
     
-    try:
         new_funcionario = Funcionario(
-            nome = funcionario.nome,
-            cargo = funcionario.cargo,
-            salario = funcionario.salario
+            nome = dados.nome,
+            cargo = dados.cargo,
+            salario = dados.salario
         )
         
         db.add(new_funcionario)
@@ -27,20 +25,16 @@ async def criar_funcionario(funcionario: FuncionarioCreate):
         db.refresh(new_funcionario)
         
         return new_funcionario
-    
-    finally:
-        db.close()
+ 
 
 @router.post("/compras")
-async def cadastrar_compras(compra: CriarCompra):
-    db = SessionLocal()
-    
-    try:
+async def cadastrar_compras(dados: CriarDespesas, db: Session = Depends(pegar_sessao)):
+
         new_compra = Compras(
-            produto = compra.produto,
-            valor = compra.valor,
-            quantidade = compra.quantidade,
-            data = compra.data 
+            produto = dados.produto,
+            valor = dados.valor,
+            quantidade = dados.quantidade,
+            data = dados.data 
         )
         
         db.add(new_compra)
@@ -49,43 +43,36 @@ async def cadastrar_compras(compra: CriarCompra):
         
         return new_compra 
     
-    finally:
-        db.close()
+@router.post("/despesas")
+async def cadastrar_despesas(dados: CriarDespesas, db: Session = Depends(pegar_sessao)):
 
-@router.get("/despesas", response_model=list[DespesaSchema])
-def listar_despesas():
-    db = SessionLocal()
-    try:
-        dados = db.query(Despesa).all()
-        return jsonable_encoder(dados)
-    finally:
-        db.close()
+        new_despesa = Despesa(
+            nome = dados.nome,
+            valor = dados.valor,
+            pagamento = dados.pagamento
+        )
+        
+        db.add(new_despesa)
+        db.commit()
+        db.refresh(new_despesa)
+        
+        return new_despesa
+    
+@router.get("/despesas", response_model=List[DespesaSchema])
+def listar_despesas(db: Session = Depends(pegar_sessao)):
+    despesas = db.query(Despesa).all()
+    return despesas
+        
         
 @router.get("/compras", response_model=list[CompraSchema])
-def listar_compras():
-    db = SessionLocal()
-    try:
-        dados = db.query(Compras).all()
-        return jsonable_encoder(dados)
-    finally:
-        db.close()
+def listar_compras(db: Session = Depends(pegar_sessao)):
+    
+    return db.query(Compras).all()
 
-# @router.get("/despesas", response_model=list[DespesaSchema])
-# def listar_despesas():
-#     db = SessionLocal()
-#     try:
-#         return db.query(Despesa).all()
-#     finally:
-#         db.close()
 
 @router.get("/funcionarios", response_model=list[FuncionarioSchema])
-def listar_funcionarios():
-    db = SessionLocal()
-    try:
-        dados = db.query(Funcionario).all()
-        return jsonable_encoder(dados)
-    finally:
-        db.close()
+def listar_funcionarios(db: Session = Depends(pegar_sessao)):
+    return db.query(Funcionario).all()
 
 @router.get("/")
 def status():
