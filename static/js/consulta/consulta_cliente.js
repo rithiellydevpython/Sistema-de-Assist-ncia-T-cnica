@@ -13,7 +13,7 @@ async function carregarClientes() {
     if (!res.ok) {
       throw new Error("Erro ao buscar clientes");
     }
-
+ 
     const data = await res.json();
 
     const clients = data.clientes; //importantissimo usar isso 

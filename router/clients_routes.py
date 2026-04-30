@@ -60,7 +60,7 @@ def atualiza_cliente(cpf: str, dados: ClienteUpdate, db: Session = Depends(pegar
     
     db.commit()
     db.refresh(cliente)
-        
+            
     return cliente
     
 
