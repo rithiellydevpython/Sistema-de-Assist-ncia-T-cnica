@@ -8,7 +8,7 @@
     color: var(--cor-texto-botao);
     transition: background 0.2s;
 }
-
+     
 .btn-logout {
     padding: 16px;
     border-radius: 8px;

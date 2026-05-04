@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuração</title>
-    <link rel="stylesheet" href="/static/css/global.css">
-    <link rel="stylesheet" href="/static/css/configuracao.css">
-    <link rel="stylesheet" href="/static/css/cards.css">
-    <link rel="stylesheet" href="/static/css/botoes.css">
+    <link rel="stylesheet" href="/static/css/config.css">
 </head>
-  
+
 <body>
     <div class="container">
 
@@ -30,6 +27,12 @@
                         <label for="senha">Senha: </label>
                         <input class="card-input" type="password" id="senha" name="senha">
 
+                        <label for="tipo_acesso">Tipo de acesso:</label>
+                        <select id="tipo_acesso" class="card-input">
+                            <option value="comum">Comum</option>
+                            <option value="admin">Admin</option>
+                        </select>
+
                         <button type="submit" class="btn">Salvar Alterações</button>
 
                         <!-- criar a rota para definir hierarquia a partir do email, para definir o tipo de acesso do usuário -->
@@ -38,7 +41,7 @@
 
                 <div class="card">
                     <h3 class="card-title">Preferências do Sistema</h3>
-                    <form class="card-form">
+                    <form id="form-preferencias" class="card-form">
                         <label for="tema">Tema:</label>
                         <select id="tema" name="tema">
                             <option value="claro">Claro</option>
@@ -69,15 +72,26 @@
                     <h3 class="card-title">Backup de Dados</h3>
                     <p>Você pode baixar um backup completo do sistema ou restaurar dados anteriores.</p>
                     <div class="card-actions">
-                        <button class="btn">Fazer Backup</button>
-                        <button class="btn-backup">Restaurar Backup</button>
+                        <button id="btnBackup" class="btn">Fazer Backup</button>
+                        <button id="btnRestaurar" class="btn-backup">Restaurar Backup</button>
                     </div>
                 </div>
             </div>
+
+            <section class="card_usuario">
+                <h2 class="card-title">Usuários</h2>
+                <!-- Remova a classe .card daqui de cima e deixe o container de lista limpo -->
+                <div id="lista-usuarios">
+                    <!-- O seu JS vai injetar vários <div class="card"> aqui dentro -->
+                </div>
+            </section>
         </main>
     </div>
 
-<script src="/static/js/configuracao/cadastro_usuario.js"> </script>
+    <a href="/html/dashboard" class="btn-voltar">← Voltar</a>
+
+    <!-- <script src="/static/js/configuracao/cadastro_usuario.js"> </script> -->
+    <script src="/static/js/configuracao/usuario.js"> </script>
 
 </body>
 

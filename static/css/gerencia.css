@@ -1,4 +1,6 @@
-/* RESET BÁSICO */
+/* =============================
+   RESET GLOBAL PROFISSIONAL
+============================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,31 +9,52 @@
 }
 
 body {
-    background: #f4f6f9;
-    color: #333;
-    padding: 20px;
+    background: #f4f6f8;
+    color: #1f2937;
+    padding: 24px;
+    line-height: 1.5;
 }
 
-/* TÍTULOS */
-h1, h2 {
+/* =============================
+   TIPOGRAFIA
+============================= */
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
-    color: #222;
+    color: #111827;
 }
 
-/* CONTAINER GERAL */
+p {
+    font-size: 14px;
+    color: #374151;
+}
+
+/* =============================
+   LAYOUT
+============================= */
 section {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
-/* FORMULÁRIOS */
+/* =============================
+   FORMULÁRIOS
+============================= */
 form {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 20px;
 }
 
@@ -39,61 +62,111 @@ form input,
 form select {
     flex: 1;
     min-width: 180px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
     outline: none;
     transition: 0.2s;
+    font-size: 14px;
 }
 
 form input:focus,
 form select:focus {
-    border-color: #4a90e2;
+    border-color: #3b82f6;
 }
 
-/* BOTÃO */
+/* =============================
+   BOTÕES
+============================= */
 button {
-    padding: 10px 15px;
+    padding: 10px 14px;
     border: none;
-    background: #4a90e2;
-    color: white;
+    background: #3b82f6;
+    color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
     transition: 0.2s;
 }
 
 button:hover {
-    background: #357ac9;
+    background: #2563eb;
 }
 
-/* LISTAS (CARDS) */
+/* BOTÃO SECUNDÁRIO */
+.btn-secundario {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-secundario:hover {
+    background: #d1d5db;
+}
+
+/* BOTÃO PERIGO */
+.btn-danger {
+    background: #ef4444;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* =============================
+   GRID DE CARDS
+============================= */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
 }
 
-/* CARD */
+/* =============================
+   CARD
+============================= */
 .card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
     transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
 .card p {
-    margin: 5px 0;
+    margin: 4px 0;
+    font-size: 14px;
 }
 
 /* DESTAQUE */
 .card strong {
-    color: #444;
+    color: #111827;
+    font-weight: 600;
 }
 
+/* =============================
+   UTILITÁRIOS
+============================= */
+.text-muted {
+    color: #6b7280;
+    font-size: 13px;
+}
 
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

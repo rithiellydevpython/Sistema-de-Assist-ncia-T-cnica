@@ -40,6 +40,7 @@ from router.configuracao import router as configuracao
 from router.logout import router as logout  # 
 from router.index import router as index  # 
 from router.vendas_route import vendas_router
+from router.configuracao import router as configuracao
 
 # ---------- INCLUSÃO DOS ROUTERS ----------
 app.include_router(clients_router) 
@@ -58,5 +59,5 @@ app.include_router(configuracao)
 app.include_router(logout)
 app.include_router(index)   
 app.include_router(vendas_router)
-
+app.include_router(configuracao)
 

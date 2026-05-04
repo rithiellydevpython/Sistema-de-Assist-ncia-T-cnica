@@ -1,8 +1,22 @@
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+
+    --primary: #2563eb;
+    --danger: #dc2626;
+
+    --border: #e5e7eb;
+    --shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--bg);
     margin: 0;
     padding: 20px;
+    color: var(--text);
 }
 
 /* Container */
@@ -16,50 +30,121 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .topo-estoque h2 {
-    color: var(--cor-titulo);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
 }
 
 .topo-estoque input {
-    padding: 10px;
+    padding: 10px 14px;
     width: 300px;
-    border-radius: 8px;
-    border: 1px solid var(--cor-borda-input);
+    border-radius: 10px;
+    border: 1px solid var(--border);
     outline: none;
+    transition: 0.2s;
+    background: #fff;
+}
+
+.topo-estoque input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 /* Grid */
 .grid-estoque {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
 }
 
+/* Card */
+.card-estoque {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    transition: 0.2s ease;
+}
 
-/* Botões */
+.card-estoque:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card-estoque h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.card-estoque p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* Ações */
 .card-estoque .acoes {
-    margin-top: 10px;
+    margin-top: 12px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .card-estoque button {
-    padding: 6px 10px;
+    flex: 1;
+    padding: 8px 10px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 13px;
+    transition: 0.2s;
+}
+
+/* Botões */
+
+.btn-voltar {
+    border: none;
+    background: #e5e7eb;
+    color: #111827;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .btn-editar {
-    background-color: var(--cor-fundo-botao);
-    color: var(--cor-texto-botao);
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #1d4ed8;
 }
 
 .btn-excluir {
-    background-color: var(--cor-fundo-botao-excluir);
-    color: var(--cor-texto-botao-excluir);
+    background-color: var(--danger);
+    color: white;
+}
+
+.btn-excluir:hover {
+    background-color: #b91c1c;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .topo-estoque {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topo-estoque input {
+        width: 100%;
+    }
 }

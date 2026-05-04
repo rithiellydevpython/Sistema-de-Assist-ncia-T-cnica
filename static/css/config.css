@@ -1,0 +1,208 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 20px; 
+}
+
+h2 {
+    margin: 20px 0; 
+}
+
+.btn,
+.botoes,
+.btn-backup,
+.btn-cadastrar,
+.btn-voltar,
+.btn-logout {
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card_usuario {
+    width: 100%;
+}
+
+#lista-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--bg-color, #f9f9f9);
+    color: var(--text-color, #333);
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TITULOS */
+h2 {
+    margin: 30px 0 15px;
+    font-size: 1.4rem;
+    color: #222;
+}
+
+/* BOTÕES */
+.btn,
+.botoes,
+.btn-backup,
+.btn-cadastrar,
+.btn-voltar,
+.btn-logout {
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:hover,
+.botoes:hover,
+.btn-backup:hover,
+.btn-cadastrar:hover,
+.btn-voltar:hover,
+.btn-logout:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* GRID PRINCIPAL */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* LISTA DE USUÁRIOS */
+#lista-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD PADRÃO */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* CARD USUÁRIO */
+.card_usuario {
+    width: 100%;
+}
+
+/* INPUTS */
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    width: 100%;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* LABEL (se usar) */
+label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* TEXTO MENOR */
+.small {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* BADGE (tipo: comum/admin) */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    background: #e0e7ff;
+    color: #3730a3;
+    width: fit-content;
+}
+
+/* BOTÕES DENTRO DO CARD */
+.card .acoes {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.card .acoes button {
+    flex: 1;
+}

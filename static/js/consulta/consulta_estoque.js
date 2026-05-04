@@ -46,13 +46,13 @@ async function editarItem(id) {
     const novaDescricao = prompt("Digite a nova descrição:");
 
     if (!novaMarca || !novoModelo || !novoCodigo || !novaDescricao) {
-    return;
-}
+        return;
+    }
 
     try {
         const response = await fetch("http://127.0.0.1:8000/estoque/" + id, {
             method: "PUT",
-            headers: {  "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 marca: novaMarca,
                 model: novoModelo,
@@ -69,7 +69,7 @@ async function editarItem(id) {
     } catch (error) {
         console.error("Erro ao editar item:", error);
         alert("Erro ao editar item");
-    }       
+    }
 }
 
 async function excluirItem(id) {
@@ -91,8 +91,14 @@ async function excluirItem(id) {
         alert("Erro ao excluir item");
     }
 }
-        
 
+function voltar() {
+    if (document.referrer !== "") {
+        window.history.back();
+    } else {
+        window.location.href = "/dashboard"; // ou sua página principal
+    }
+}
 
 
 carregarEstoque();
