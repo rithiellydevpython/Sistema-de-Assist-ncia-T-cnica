@@ -32,7 +32,8 @@ header {
 
     background-color: var(--cor-fundo-card);
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+    box-shadow: var(--cor-sombra-card);
 }
 
 /* SEÇÃO FORM */
@@ -75,8 +76,8 @@ header {
 /* EFEITO FOCUS (PROFISSIONAL) */
 .form-label input:focus {
     outline: none;
-    border: 1px solid #4f46e5;
-    box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+    border: 1px solid var(--cor-foco-input);
+    box-shadow: var(--cor-sombra-foco-input);
 }
 
 /* BOTÕES */

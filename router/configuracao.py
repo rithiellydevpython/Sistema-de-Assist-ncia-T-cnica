@@ -1,12 +1,12 @@
 import os
+import sqlite3  # Importante para backup de banco em uso
 import shutil
-from datetime import datetime
 import threading
-
+from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
-
+from datetime import datetime
 from dependencies import pegar_sessao
 from models import Usuario, Preferencia
 from schemas.configuracao import (
@@ -15,19 +15,33 @@ from schemas.configuracao import (
     PreferenciaUpdate
 )
 
-# =========================
 # 🔹 CONFIG BASE
-# =========================
 
 router = APIRouter(prefix="/configuracoes", tags=["Configurações"])
 
+# Se o arquivo está em /routes/config.py, ".." sobe para a raiz corretamente
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DB_PATH = os.path.join(BASE_DIR, "database.db")
+DB_PATH = os.path.join(BASE_DIR, "banco.db")
 BACKUP_DIR = os.path.join(BASE_DIR, "backups")
 
 os.makedirs(BACKUP_DIR, exist_ok=True)
 
 backup_lock = threading.Lock()
+
+
+# # =========================
+# # 🔹 CONFIG BASE
+# # =========================
+
+# router = APIRouter(prefix="/configuracoes", tags=["Configurações"])
+
+# BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+# DB_PATH = os.path.join(BASE_DIR, "database.db")
+# BACKUP_DIR = os.path.join(BASE_DIR, "backups")
+
+# os.makedirs(BACKUP_DIR, exist_ok=True)
+
+# backup_lock = threading.Lock()
 
 
 # =========================
@@ -163,23 +177,33 @@ def salvar_preferencias(
 # 🔹 BACKUP
 # =========================
 
+import sqlite3 
+
 @router.get("/backup")
 def backup_banco():
-
     if not os.path.exists(DB_PATH):
-        raise HTTPException(status_code=404, detail="Banco não encontrado")
+        raise HTTPException(status_code=404, detail="Banco não encontrado no caminho: " + DB_PATH)
 
     nome_backup = f"backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.db"
     caminho_backup = os.path.join(BACKUP_DIR, nome_backup)
 
-    with backup_lock:
-        shutil.copy2(DB_PATH, caminho_backup)
+    try:
+        # Forma segura de copiar um SQLite em uso
+        origem = sqlite3.connect(DB_PATH)
+        destino = sqlite3.connect(caminho_backup)
+        with destino:
+            origem.backup(destino)
+        destino.close()
+        origem.close()
 
-    return FileResponse(
-        path=caminho_backup,
-        media_type="application/octet-stream",
-        filename=nome_backup
-    )
+        return FileResponse(
+            path=caminho_backup,
+            media_type="application/x-sqlite3", # Tipo correto para .db
+            filename=nome_backup
+        )
+    except Exception as e:
+        print(f"Erro no backup: {e}")
+        raise HTTPException(status_code=500, detail="Erro interno ao gerar backup")
 
 
 # =========================

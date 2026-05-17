@@ -4,8 +4,13 @@ let usuario_id = 1;
 // usuarios
 
 async function carregarUsuarios() {
-
     try {
+        const container = document.getElementById("lista-usuarios");
+        
+        // 1. Se não existir o container na página atual, para aqui mesmo em silêncio
+        if (!container) return; 
+
+        // 2. Agora sim faz a requisição
         const res = await fetch("/configuracoes/usuarios");
 
         if (!res.ok) {
@@ -15,12 +20,7 @@ async function carregarUsuarios() {
 
         const usuarios = await res.json();
 
-        const container = document.getElementById("lista-usuarios");
-        if (!container) {
-            console.error("Container lista-usuarios não encontrado");
-            return;
-        }
-
+        // 3. Limpa e preenche o container
         container.innerHTML = "";
 
         if (!usuarios || usuarios.length === 0) {
@@ -111,37 +111,33 @@ async function deletarUsuario(id) {
     }
 }
 
-document.getElementById("form-usuario").addEventListener("submit", async function (e) {
-    e.preventDefault(); // 🔥 impede o submit padrão
+// Procure este bloco no seu usuario.js e adicione o "if"
+const formUsuario = document.getElementById("form-usuario");
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
-    const tipo_acesso = document.getElementById("tipo_acesso").value;
+if (formUsuario) {
+    formUsuario.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        const tipo_acesso = document.getElementById("tipo_acesso").value;
 
-    const res = await fetch("/configuracoes/usuarios", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome,
-            email,
-            senha,
-            tipo_acesso
-        })
+        const res = await fetch("/configuracoes/usuarios", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nome, email, senha, tipo_acesso })
+        });
+
+        if (res.ok) {
+            alert("Usuário criado com sucesso!");
+            carregarUsuarios();
+        } else {
+            const err = await res.json();
+            alert(err.detail || "Erro ao criar usuário");
+        }
     });
-
-    if (res.ok) {
-        alert("Usuário criado com sucesso!");
-    } else {
-        const err = await res.json();
-        alert(err.detail || "Erro ao criar usuário");
-    }
-
-    carregarUsuarios();
-});
-
+}
 
 // inicialização
 
@@ -168,7 +164,7 @@ async function inicializarPreferencias() {
     await carregarPreferenciasUI();
 }
 
-
+    
 // fim
 
 
@@ -176,33 +172,32 @@ async function inicializarPreferencias() {
 // 🔥 PREFERÊNCIAS / TEMA
 // =============================
 
-async function aplicarTemaGlobal(force = false) {
-
-    if (temaBloqueado && !force) return;
+async function aplicarTemaGlobal() {
+    // 1. Tenta aplicar o tema IMEDIATAMENTE usando o que está gravado no navegador
+    const temaSalvo = localStorage.getItem("tema_cache");
+    if (temaSalvo) {
+        document.body.classList.toggle("dark", temaSalvo === "escuro");
+    }
 
     try {
+        // 2. Busca no servidor para garantir que está atualizado
         const res = await fetch(`/configuracoes/preferencias/${usuario_id}`);
-
-        let tema = "claro";
-
         if (res.ok) {
             const pref = await res.json();
-            tema = pref.tema;
-        } else {
-            console.error("Erro ao buscar tema:", res.status);
+            const novoTema = pref.tema.toLowerCase();
+
+            // 3. Se o tema do servidor for diferente do cache, atualiza
+            if (novoTema !== temaSalvo) {
+                document.body.classList.toggle("dark", novoTema === "escuro");
+                localStorage.setItem("tema_cache", novoTema);
+            }
         }
-
-        const escuro = tema.toLowerCase() === "escuro";
-
-        document.body.classList.remove("dark");
-        document.body.classList.toggle("dark", escuro);
-
-        localStorage.setItem("tema_cache", tema);
-
     } catch (err) {
-        console.error("Erro aplicarTemaGlobal:", err);
+        console.error("Erro ao sincronizar tema:", err);
     }
 }
+
+
 
 async function carregarPreferenciasUI() {
 
@@ -303,27 +298,27 @@ function inicializarBackup() {
 // 🔔 TOAST
 // =============================
 
-// function showToast(message, type = "info") {
+function showToast(message, type = "info") {
 
-//     const toast = document.createElement("div");
+    const toast = document.createElement("div");
 
-//     toast.textContent = message;
+    toast.textContent = message;
 
-//     toast.style.position = "fixed";
-//     toast.style.bottom = "20px";
-//     toast.style.right = "20px";
-//     toast.style.padding = "12px 18px";
-//     toast.style.borderRadius = "8px";
-//     toast.style.color = "#fff";
-//     toast.style.zIndex = "9999";
-//     toast.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+    toast.style.position = "fixed";
+    toast.style.bottom = "20px";
+    toast.style.right = "20px";
+    toast.style.padding = "12px 18px";
+    toast.style.borderRadius = "8px";
+    toast.style.color = "#fff";
+    toast.style.zIndex = "9999";
+    toast.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
 
-//     toast.style.background =
-//         type === "success" ? "#2ecc71" :
-//         type === "error" ? "#e74c3c" :
-//         "#3498db";
+    toast.style.background =
+        type === "success" ? "#2ecc71" :
+        type === "error" ? "#e74c3c" :
+        "#3498db";
 
-//     document.body.appendChild(toast);
+    document.body.appendChild(toast);
 
-//     setTimeout(() => toast.remove(), 3000);
-// }
+    setTimeout(() => toast.remove(), 3000);
+}

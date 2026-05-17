@@ -1,6 +1,6 @@
 # from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
 from sqlalchemy.orm import declarative_base
-from sqlalchemy import Date
+from sqlalchemy import Date, Text
 from sqlalchemy import DateTime
 from sqlalchemy import Column, String, Integer, Boolean, Float, ForeignKey
 from database import Base 
@@ -169,3 +169,17 @@ class Backup(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome_arquivo = Column(String)
     data_criacao = Column(String)
+    
+class Relatorio(Base):
+    __tablename__ = "relatorios"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    tipo = Column(String, nullable=False)
+
+    data_inicio = Column(Date, nullable=False)
+    data_fim = Column(Date, nullable=False)
+
+    conteudo = Column(Text)
+
+    exportado_pdf = Column(Boolean, default=False)

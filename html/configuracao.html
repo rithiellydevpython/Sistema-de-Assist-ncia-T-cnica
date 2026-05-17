@@ -71,9 +71,18 @@
                 <div class="card">
                     <h3 class="card-title">Backup de Dados</h3>
                     <p>Você pode baixar um backup completo do sistema ou restaurar dados anteriores.</p>
-                    <div class="card-actions">
+
+                    <div class="card-actions" style="display: flex; flex-direction: column; gap: 10px;">
                         <button id="btnBackup" class="btn">Fazer Backup</button>
-                        <button id="btnRestaurar" class="btn-backup">Restaurar Backup</button>
+
+                        <hr>
+
+                        <!-- Input de arquivo adicionado aqui -->
+                        <label for="inputBackup" style="font-size: 0.9rem; font-weight: bold;">Restaurar de
+                            arquivo:</label>
+                        <input type="file" id="inputBackup" accept=".db" class="card-input">
+
+                        <button id="btnRestaurar" class="btn-backup">Confirmar Restauração</button>
                     </div>
                 </div>
             </div>

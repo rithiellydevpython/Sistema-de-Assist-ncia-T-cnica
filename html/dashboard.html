@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-<link rel="stylesheet" href="/static/css/global.css">
-<link rel="stylesheet" href="/static/css/dashboard.css">
-<link rel="stylesheet" href="/static/css/cards.css">
-<link rel="stylesheet" href="/static/css/botoes.css">
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/cards.css">
+    <link rel="stylesheet" href="/static/css/botoes.css">
     <link rel="icon" href="/static/image/favicon.ico" type="image/png">
+
+    <script>
+        // Executa antes mesmo do resto da página carregar
+        (function () {
+            const tema = localStorage.getItem("tema_cache");
+            if (tema === "escuro") {
+                document.documentElement.classList.add("dark");
+                // Nota: use document.documentElement para aplicar ao <html> e evitar o flash branco
+            }
+        })();
+    </script>
+</head>
 
 </head>
 
@@ -91,6 +103,7 @@
     </div>
 
     <script src="/static/js/dash.js"></script>
+    <script src="/static/js/configuracao/usuario.js"></script>
 </body>
 
 </html>
