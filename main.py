@@ -13,7 +13,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 def root():
-    return RedirectResponse(url="/html/")
+    return RedirectResponse(url="/html/dashboard")
 
 app.add_middleware(
     CORSMiddleware,
