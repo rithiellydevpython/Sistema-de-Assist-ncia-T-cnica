@@ -183,3 +183,16 @@ class Relatorio(Base):
     conteudo = Column(Text)
 
     exportado_pdf = Column(Boolean, default=False)
+    
+class Financa(Base):
+    __tablename__ = "financas"
+
+    id = Column(Integer, primary_key=True)
+
+    tipo = Column(String)
+
+    valor = Column(Float)
+
+    descricao = Column(String)
+
+    data = Column(Date)

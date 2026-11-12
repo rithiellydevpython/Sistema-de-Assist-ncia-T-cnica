@@ -1,4 +1,8 @@
 from datetime import date
+from fastapi import Depends
+from sqlalchemy.orm import Session
+from dependencies import pegar_sessao
+from models import Venda
 
 from fastapi import APIRouter
 
@@ -8,19 +12,25 @@ filtro_vendas_routes = APIRouter(
 )
 
 @filtro_vendas_routes.get("/vendas")
-def relatorio_vendas(data_inicio: date = None, data_fim: date = None):
-
+def relatorio_vendas( db: Session = Depends(pegar_sessao), data_inicio: date = None, data_fim: date = None):
+    vendas = db.query(Venda).all()
+    
     vendas = [
-        {"valor": 100, "data": "2026-03-01"},
-        {"valor": 200, "data": "2026-03-10"},
-    ]
+        {
+            "id": v.id,
+            "data": v.date,
+            "valor": v.value
+        }
+        for v in vendas
+    ]   
 
     if data_inicio and data_fim:
         vendas = [
             v for v in vendas
-            if data_inicio <= date.fromisoformat(v["data"]) <= data_fim
+            if data_inicio <= v["data"] <= data_fim
         ]
 
-    total = sum(v["valor"] for v in vendas)
+    soma_total = sum(v["valor"] for v in vendas)
 
-    return {"total": total}
+    return {"vendas": vendas, "total": soma_total}
+
