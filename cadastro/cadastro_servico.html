@@ -22,10 +22,14 @@
             <form class="formulario" id="form-servico">
 
                 <div class="form-label">
-                    <label class="label" for="cliente-servico">Cliente:</label>
-                    <select id="cliente-servico" name="cliente" required>
-                        <option value="">Selecione um cliente</option>
-                    </select>
+                    <label class="label" for="busca-cliente">Cliente:</label>
+
+                    <input type="text" id="busca-cliente" placeholder="Digite o nome ou CPF do cliente"
+                        autocomplete="off" required>
+
+                    <input type="hidden" id="cliente-servico">
+
+                    <div id="lista-clientes" class="lista-clientes"></div>
                 </div>
 
                 <!-- adcionar cpf ja que e a primary key do cliente -->
@@ -64,7 +68,10 @@
                     <a href="/html/dashboard" class="btn-voltar" id="servico-btn-voltar">Voltar</a>
                 </div>
 
+               
             </form>
+
+            
 
         </section>
         <script src="/static/js/cadastro/cadastro_servico.js"></script>

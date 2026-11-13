@@ -7,7 +7,7 @@ from database import Base
 from sqlalchemy.orm import relationship
 # db = create_engine("sqlite:///banco.db")
 
-Base = declarative_base()
+# Base = declarative_base()
 
 class Client(Base):
     __tablename__= "clients"

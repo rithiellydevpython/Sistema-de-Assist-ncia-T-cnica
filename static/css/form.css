@@ -131,3 +131,37 @@ header {
         flex-direction: column;
     }
 } */
+
+.lista-clientes {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.lista-clientes button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.lista-clientes button:hover {
+    background: #eee;
+}
+
+.form-label {
+    position: relative;
+}
+
